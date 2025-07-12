@@ -1,0 +1,211 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model alumni {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama       String?   @db.VarChar(255)
+  jabatan    String?   @db.VarChar(255)
+  gambar     String?   @db.VarChar(255)
+  motivasi   String?   @db.Text
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model artikel {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  judul      String?   @db.VarChar(255)
+  slug       String?   @db.VarChar(255)
+  image      String?   @db.VarChar(255)
+  content    String    @db.LongText
+  thumbnail  String?   @db.VarChar(255)
+  kategori   String?   @db.VarChar(255)
+  penulis    String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model biro {
+  id              BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama            String?   @db.VarChar(255)
+  nama_pimpinan   String?   @db.VarChar(255)
+  gambar_pimpinan String?   @db.VarChar(255)
+  email_pimpinan  String?   @db.VarChar(255)
+  slug            String?   @db.VarChar(255)
+  content         String?   @db.LongText
+  created_by      BigInt?   @db.UnsignedBigInt
+  updated_by      BigInt?   @db.UnsignedBigInt
+  deleted_by      BigInt?   @db.UnsignedBigInt
+  created_at      DateTime? @db.Timestamp(0)
+  updated_at      DateTime? @db.Timestamp(0)
+  deleted_at      DateTime? @db.Timestamp(0)
+}
+
+model download {
+  id             BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  judul          String    @db.VarChar(255)
+  nama_file      String    @db.VarChar(255)
+  ekstensi       String    @db.VarChar(10)
+  ukuran_kb      Decimal   @db.Decimal(10, 2)
+  tanggal_upload DateTime  @db.Date
+  created_by     BigInt?   @db.UnsignedBigInt
+  updated_by     BigInt?   @db.UnsignedBigInt
+  deleted_by     BigInt?   @db.UnsignedBigInt
+  created_at     DateTime? @db.Timestamp(0)
+  updated_at     DateTime? @db.Timestamp(0)
+  deleted_at     DateTime? @db.Timestamp(0)
+}
+
+model failed_jobs {
+  id         BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  uuid       String   @unique(map: "failed_jobs_uuid_unique") @db.VarChar(255)
+  connection String   @db.Text
+  queue      String   @db.Text
+  payload    String   @db.LongText
+  exception  String   @db.LongText
+  failed_at  DateTime @default(now()) @db.Timestamp(0)
+}
+
+model fakultas {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  singkatan  String?   @db.VarChar(255)
+  nama       String?   @db.VarChar(255)
+  program    String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model galeri {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  gambar     String?   @db.VarChar(255)
+  deskripsi  String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model jurusan {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama       String?   @db.VarChar(255)
+  ukt1       Decimal   @db.Decimal(15, 2)
+  ukt2       Decimal   @db.Decimal(15, 2)
+  ukt3       Decimal   @db.Decimal(15, 2)
+  ukt4       Decimal   @db.Decimal(15, 2)
+  ukt5       Decimal   @db.Decimal(15, 2)
+  ukt6       Decimal   @db.Decimal(15, 2)
+  ukt7       Decimal   @db.Decimal(15, 2)
+  ukt8       Decimal   @db.Decimal(15, 2)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model kalender_akademik {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  kegiatan   String?   @db.VarChar(255)
+  tanggal    String?   @db.VarChar(255)
+  semester   String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model migrations {
+  id        Int    @id @default(autoincrement()) @db.UnsignedInt
+  migration String @db.VarChar(255)
+  batch     Int
+}
+
+model ormawa {
+  id          BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama_ormawa String?   @db.VarChar(255)
+  created_by  BigInt?   @db.UnsignedBigInt
+  updated_by  BigInt?   @db.UnsignedBigInt
+  deleted_by  BigInt?   @db.UnsignedBigInt
+  created_at  DateTime? @db.Timestamp(0)
+  updated_at  DateTime? @db.Timestamp(0)
+  deleted_at  DateTime? @db.Timestamp(0)
+}
+
+model password_reset_tokens {
+  email      String    @id @db.VarChar(255)
+  token      String    @db.VarChar(255)
+  created_at DateTime? @db.Timestamp(0)
+}
+
+model personal_access_tokens {
+  id             BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  tokenable_type String    @db.VarChar(255)
+  tokenable_id   BigInt    @db.UnsignedBigInt
+  name           String    @db.VarChar(255)
+  token          String    @unique(map: "personal_access_tokens_token_unique") @db.VarChar(64)
+  abilities      String?   @db.Text
+  last_used_at   DateTime? @db.Timestamp(0)
+  expires_at     DateTime? @db.Timestamp(0)
+  created_at     DateTime? @db.Timestamp(0)
+  updated_at     DateTime? @db.Timestamp(0)
+
+  @@index([tokenable_type, tokenable_id], map: "personal_access_tokens_tokenable_type_tokenable_id_index")
+}
+
+model struktur_organisasi {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama       String?   @db.VarChar(255)
+  jabatan    String?   @db.VarChar(255)
+  gambar     String?   @db.VarChar(255)
+  kategori   String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model ukm {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama_ukm   String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model users {
+  id                BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  name              String    @db.VarChar(255)
+  email             String    @unique(map: "users_email_unique") @db.VarChar(255)
+  email_verified_at DateTime? @db.Timestamp(0)
+  password          String    @db.VarChar(255)
+  remember_token    String?   @db.VarChar(100)
+  created_at        DateTime? @db.Timestamp(0)
+  updated_at        DateTime? @db.Timestamp(0)
+}

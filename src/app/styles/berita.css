@@ -1,0 +1,77 @@
+.berita-section {
+  padding: 60px 20px;
+}
+
+.berita-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Kiri - konten utama */
+.berita-kiri {
+  flex: 3;
+}
+
+.berita-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.berita-card {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.berita-card h5 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.berita-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  font-size: 13px;
+  font-weight: bold;
+  color: #f6b000;
+  text-decoration: none;
+}
+
+/* Kanan - sidebar */
+.sidebar-kanan {
+  flex: 1;
+  min-width: 250px;
+}
+
+.sidebar-widget {
+  margin-bottom: 30px;
+}
+
+.sidebar-widget h5 {
+  font-size: 16px;
+  color: #004bb1;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sidebar-widget ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-widget li {
+  margin-bottom: 10px;
+}
+
+.sidebar-widget a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}

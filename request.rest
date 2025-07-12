@@ -1,0 +1,8 @@
+###
+GET http://localhost:3000/api/artikel
+
+###
+GET http://localhost:3000/api/galeri
+
+###
+GET http://localhost:3000/api/artikel/quia-placeat-cumque-aut-sint-9

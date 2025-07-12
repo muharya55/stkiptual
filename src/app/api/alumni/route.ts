@@ -1,0 +1,30 @@
+import { NextResponse } from 'next/server';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
+function serialize(obj: any): any {
+  return JSON.parse(
+    JSON.stringify(obj, (_, value) =>
+      typeof value === "bigint" ? Number(value) : value
+    )
+  );
+}
+export async function GET() {
+  try {
+    const alumni = await prisma.alumni.findMany({
+      orderBy: { id: 'asc' },
+      select: {
+        nama: true,
+        jabatan: true,
+        gambar: true,
+        motivasi: true 
+      },
+    });
+
+    return NextResponse.json(serialize(alumni));
+  } catch (error) {
+    console.error('Error fetching alumni:', error);
+    return new NextResponse('Internal Server Error', { status: 500 });
+  }
+}

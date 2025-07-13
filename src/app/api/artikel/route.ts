@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient,Prisma } from "@prisma/client";
 import { NextResponse } from "next/server";
 
 function serialize<T>(obj: T): T {
@@ -18,7 +18,7 @@ export async function GET(req: Request) {
   const page = parseInt(searchParams.get("page") || "1", 10);
   const limit = parseInt(searchParams.get("limit") || "6", 10);
   const offset = (page - 1) * limit;
-  const whereCondition: any = {};
+  const whereCondition: Prisma.artikelWhereInput = {};
 
   if (kategori) {
     whereCondition.kategori = { equals: kategori };

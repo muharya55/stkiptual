@@ -12,13 +12,13 @@ function serialize<T>(obj: T): T {
   );
 }
 
-
-type Params = { params: { slug: string } };
-
-export async function GET(_: Request, { params }: Params) {
+export async function GET(
+  _: Request,
+  context: { params: { slug: string } }
+) {
   try {
     const artikel = await prisma.artikel.findFirst({
-      where: { slug: params.slug },
+      where: { slug: context.params.slug },
     });
 
     if (!artikel) {

@@ -12,7 +12,7 @@ function serialize<T>(obj: T): T {
   );
 }
 
-type Params = { params: { slug: string } }
+// type Params = { params: { slug: string } }
 
 export async function GET( request: NextRequest,
   context: {

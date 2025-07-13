@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['103.127.133.37'], // tambahkan IP atau domain
+    domains: [process.env.NEXT_PUBLIC_API_URL||''], // tambahkan IP atau domain
   },
 };
 

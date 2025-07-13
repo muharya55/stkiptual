@@ -25,7 +25,7 @@ export async function GET() {
 
     return NextResponse.json(serialize(alumni));
   } catch (error) {
-    console.error('Error fetching alumni:', error);
-    return new NextResponse('Internal Server Error', { status: 500 });
+    console.error("Artikel error:", error);
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }

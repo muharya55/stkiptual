@@ -3,14 +3,13 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-function serialize<T>(obj: T): T {
+function serialize(obj: any): any {
   return JSON.parse(
     JSON.stringify(obj, (_, value) =>
       typeof value === "bigint" ? Number(value) : value
     )
   );
 }
-
 export async function GET() {
   try {
     const galeri = await prisma.galeri.findMany({
@@ -22,8 +21,8 @@ export async function GET() {
     });
 
     return NextResponse.json(serialize(galeri));
-  } catch (error) {
-    console.error('Error fetching galeri:', error);
-    return new NextResponse('Internal Server Error', { status: 500 });
+  } catch (error) { 
+    console.error("Artikel error:", error);
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }

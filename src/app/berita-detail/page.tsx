@@ -10,10 +10,11 @@ type Artikel = {
   created_at: string;
 };
 
-export default async function BeritaDetail(props: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const slug = props.searchParams.slug;
+interface SearchPageProps {
+    searchParams: Promise<{ slug?: string }>; // ✅ searchParams as a Promise
+}
+export default async function BeritaDetail({ searchParams }: SearchPageProps) {
+  const {slug} = await searchParams;
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/artikel/${slug}`, {
     cache: 'no-store', // agar selalu fresh

@@ -1,5 +1,5 @@
 import { prisma } from 'lib/prisma';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
  
 function serialize<T>(obj: T): T {
   return JSON.parse(
@@ -10,7 +10,7 @@ function serialize<T>(obj: T): T {
 }
 
 export async function GET(
-  _: Request,
+  request: NextRequest,
   context: { params: { slug: string } }
 ) {
   try {

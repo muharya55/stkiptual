@@ -14,13 +14,13 @@ function serialize<T>(obj: T): T {
 
 // type Params = { params: { slug: string } }
 
-export async function GET( request: NextRequest,
-  context: {
-    params: Record<string, string>; // ✅ atau gunakan jenis generic
-  }) {
+export async function GET(  request: NextRequest,
+  { params }: { params: Promise<Record<string, string>> }
+) {
   try {
-    const slug = context.params.slug;
+    const { slug } = await params;
 
+ 
     const artikel = await prisma.artikel.findFirst({
       where: { slug: slug },
     });

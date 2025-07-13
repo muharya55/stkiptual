@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // images: {
+  //   domains: ['http://103.127.133.37'], // tambahkan IP atau domain
+  // },
   images: {
-    domains: [process.env.NEXT_PUBLIC_API_URL||''], // tambahkan IP atau domain
+    remotePatterns: [new URL('http://103.127.133.37/**')],
   },
 };
 

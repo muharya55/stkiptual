@@ -3,13 +3,14 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-function serialize(obj: any): any {
+function serialize<T>(obj: T): T {
   return JSON.parse(
     JSON.stringify(obj, (_, value) =>
       typeof value === "bigint" ? Number(value) : value
     )
   );
 }
+
 export async function GET() {
   try {
     const alumni = await prisma.alumni.findMany({

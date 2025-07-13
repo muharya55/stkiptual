@@ -2,7 +2,6 @@
 import React from "react";
 import Script from "next/script";
 import Link from "next/link";   
-import Image from "next/image";
 import HomeClientInit from "./utils/HomeClientInit";
 import Footer from "./section/footer";
 import Navbar from "./components/Navbar";

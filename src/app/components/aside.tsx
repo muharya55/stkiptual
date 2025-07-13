@@ -4,12 +4,17 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useArtikelByKategori } from 'lib/useArtikel';
-
+interface Post {
+  slug: string;
+  thumbnail?: string;
+  judul: string;
+  created_at: string | Date;
+}
 const Aside: React.FC = () => {
   const { data: infoPosts, isLoading: loadingInfo } = useArtikelByKategori('Info', 1, 3);
   const { data: agendaPosts, isLoading: loadingAgenda } = useArtikelByKategori('Agenda', 1, 3);
 
-  const renderPosts = (posts: any[]) =>
+  const renderPosts = (posts: Post[]) =>
     posts.map((post) => (
       <div key={post.slug} className="latest-posts d-flex gap-20px mb-20px">
         <div className="latest-posts_thumb">

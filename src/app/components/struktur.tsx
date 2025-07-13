@@ -16,11 +16,15 @@ const Struktur = () => {
     if (isLoading) return <p className="text-center">Loading Struktur Organisasi...</p>;
     if (isError) return <p className="text-center text-danger">Gagal memuat Struktur Organisasi.</p>;
 
-    const groupedTeam: Record<string, TeamMember[]> = team.reduce((acc: { [x: string]: any[]; }, member: { kategori: string | number; }) => {
-    if (!acc[member.kategori]) acc[member.kategori] = [];
-    acc[member.kategori].push(member);
-    return acc;
-    }, {} as Record<string, TeamMember[]>);
+    
+  const groupedTeam: Record<string, TeamMember[]> = team.reduce(
+    (acc: Record<string, TeamMember[]>, member: TeamMember) => {
+      if (!acc[member.kategori]) acc[member.kategori] = [];
+      acc[member.kategori].push(member);
+      return acc;
+    },
+    {} as Record<string, TeamMember[]>
+  );
   // console.log(groupedTeam);
 
   return (

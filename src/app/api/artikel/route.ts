@@ -1,13 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 
-function serialize(obj: any): any {
+function serialize<T>(obj: T): T {
   return JSON.parse(
     JSON.stringify(obj, (_, value) =>
       typeof value === "bigint" ? Number(value) : value
     )
   );
 }
+
 const prisma = new PrismaClient();
 
 export async function GET(req: Request) {

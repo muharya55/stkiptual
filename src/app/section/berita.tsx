@@ -4,11 +4,17 @@ import Image from 'next/image';
 import Aside from 'app/components/aside';
 import { useState } from 'react';
 import { useArtikelByKategori } from 'lib/useArtikel';
- 
+ interface Berita {
+  slug: string;
+  image: string;
+  judul: string;
+  kategori: string;
+}
+
 const BeritaSection: React.FC = () => {
   const [page, setPage] = useState(1);
   const { data, meta, isLoading } = useArtikelByKategori("Pengumuman", page, 6);
-  console.log(data);
+  // console.log(data);
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   return (
@@ -20,7 +26,7 @@ const BeritaSection: React.FC = () => {
 
             {isLoading ? <p>Memuat data...</p> : (
               <div className="row">
-                {data.map((item: any) => (
+                {data.map((item: Berita) => (
                   <div key={item.slug} className="col-12 col-sm-6 col-md-6 col-lg-4 mt-3">
                     <div className="campus-items">
                       <a href={`/berita-detail?slug=${item.slug}`}>

@@ -40,7 +40,7 @@ export async function GET(req: Request) {
         judul: true,
         slug: true,
         kategori: true,
-        thumbnail: true,
+        image: true,
         created_at: true,
       },
     }),

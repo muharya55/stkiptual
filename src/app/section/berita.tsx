@@ -8,6 +8,8 @@ import { useArtikelByKategori } from 'lib/useArtikel';
 const BeritaSection: React.FC = () => {
   const [page, setPage] = useState(1);
   const { data, meta, isLoading } = useArtikelByKategori("Pengumuman", page, 6);
+  console.log(data);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   return (
     <section className="uni-campus pt-80px pb-80px">
@@ -23,8 +25,8 @@ const BeritaSection: React.FC = () => {
                     <div className="campus-items">
                       <a href={`/berita-detail?slug=${item.slug}`}>
                         <Image
-                          // src={item.thumbnail || '/images/default.jpg'}
-                          src={'/images/berita/berita-1.jpeg'}
+                          src={`${apiUrl}/storage/${item.image}` || '/images/berita-1.jpeg'}
+                          // src={`${item.thumbnail}`}
                           alt={`Image of ${item.judul}`}
                           width={300}
                           height={200}

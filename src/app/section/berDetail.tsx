@@ -8,6 +8,7 @@ type Artikel = {
   slug: string;
   kategori: string;
   thumbnail: string;
+  image: string;
   content: string;
   created_at: string;
 };
@@ -16,11 +17,14 @@ type Props = {
 };
 
 const BerDetail = ({ artikel }: Props) => {
+  // console.log(artikel);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   return (
     <>
        <div className="blog-single-simple__wrapper">
               <Image
-                src={artikel.thumbnail || '/images/berita/berita-1.jpeg'}
+                src={`${apiUrl}/storage/${artikel.image}` || '/images/berita/berita-1.jpeg'} 
                 alt={artikel.judul}
                 height={400}
                 width={950}

@@ -5,6 +5,7 @@ type Artikel = {
   slug: string;
   kategori: string;
   thumbnail: string;
+  image: string;
   content: string;
   created_at: string;
 };

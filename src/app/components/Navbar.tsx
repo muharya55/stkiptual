@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
 
   const pathname = usePathname() =='/';
-  console.log({pathname});
+//   console.log({pathname});
   const margintop = pathname ? "1px" : "-40px";
   return (
     <>

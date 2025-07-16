@@ -1,5 +1,6 @@
 import Sidebar from "app/components/sidebar";
 import {  MenuItems2 } from "app/data/menu";
+import BiayaPendidikan from "app/section/BiayaPendidikan";
  
 // app/data/sidebarMenu.ts
 
@@ -151,7 +152,8 @@ const ProgramStudi = () => {
             ></div>
           </div>
 
-          <div className="overflow-scroll" >
+          <BiayaPendidikan/>
+          {/* <div className="overflow-scroll" >
            <div className="" style={{width:"max-content"}}>
               <table className="table table-bordered text-center" >
                 <thead> 
@@ -179,7 +181,7 @@ const ProgramStudi = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

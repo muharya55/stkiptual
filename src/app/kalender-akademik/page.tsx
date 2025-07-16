@@ -1,5 +1,6 @@
 import Sidebar from "app/components/sidebar";
 import {  MenuItems2 } from "app/data/menu";
+import Kaldemik from "app/section/Kaldemik";
  
 // app/data/sidebarMenu.ts
 
@@ -114,15 +115,9 @@ const KalenderAkademik = () => {
 
           <div className="overflow-scroll" >
            <div className="" style={{width:"max-content"}}>
-              <table className="table table-bordered table-stripped text-center" >
-                <thead style={{backgroundColor:"#E6F0D9"}}>
-                  <tr style={{backgroundColor:"#E6F0D9"}}>
-                    <th>No</th>
-                    <th>Kegiatan Semester Ganjil</th>
-                    <th>Tanggal</th>
-                  </tr> 
-                </thead>
-                <tbody>
+                
+                <Kaldemik/>
+                {/* <tbody>
                   {uktList.map((item, index) => (
                     <tr key={index}>
                       <td>{index + 1}</td>
@@ -142,8 +137,8 @@ const KalenderAkademik = () => {
                       <td className="text-start">{item.tanggal}</td>
                     </tr>
                   ))}
-                </tbody>
-              </table>
+                </tbody> */}
+            
               {/* <table className="table table-bordered table-stripped text-center" >
                 <thead style={{backgroundColor:"aliceblue"}}>
                   <tr>

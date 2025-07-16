@@ -80,16 +80,18 @@ model failed_jobs {
 }
 
 model fakultas {
-  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  singkatan  String?   @db.VarChar(255)
-  nama       String?   @db.VarChar(255)
-  program    String?   @db.VarChar(255)
-  created_by BigInt?   @db.UnsignedBigInt
-  updated_by BigInt?   @db.UnsignedBigInt
-  deleted_by BigInt?   @db.UnsignedBigInt
-  created_at DateTime? @db.Timestamp(0)
-  updated_at DateTime? @db.Timestamp(0)
-  deleted_at DateTime? @db.Timestamp(0)
+  id          BigInt     @id @default(autoincrement()) @db.UnsignedBigInt
+  singkatan   String?    @db.VarChar(255)
+  nama        String?    @db.VarChar(255)
+  program     String?    @db.VarChar(255)
+  created_by  BigInt?    @db.UnsignedBigInt
+  updated_by  BigInt?    @db.UnsignedBigInt
+  deleted_by  BigInt?    @db.UnsignedBigInt
+  created_at  DateTime?  @db.Timestamp(0)
+  updated_at  DateTime?  @db.Timestamp(0)
+  deleted_at  DateTime?  @db.Timestamp(0)
+
+  jurusan     jurusan[]  @relation("FakultasJurusan") // relasi ke jurusan (hasMany)
 }
 
 model galeri {
@@ -105,23 +107,28 @@ model galeri {
 }
 
 model jurusan {
-  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  nama       String?   @db.VarChar(255)
-  ukt1       Decimal   @db.Decimal(15, 2)
-  ukt2       Decimal   @db.Decimal(15, 2)
-  ukt3       Decimal   @db.Decimal(15, 2)
-  ukt4       Decimal   @db.Decimal(15, 2)
-  ukt5       Decimal   @db.Decimal(15, 2)
-  ukt6       Decimal   @db.Decimal(15, 2)
-  ukt7       Decimal   @db.Decimal(15, 2)
-  ukt8       Decimal   @db.Decimal(15, 2)
-  created_by BigInt?   @db.UnsignedBigInt
-  updated_by BigInt?   @db.UnsignedBigInt
-  deleted_by BigInt?   @db.UnsignedBigInt
-  created_at DateTime? @db.Timestamp(0)
-  updated_at DateTime? @db.Timestamp(0)
-  deleted_at DateTime? @db.Timestamp(0)
+  id           BigInt     @id @default(autoincrement()) @db.UnsignedBigInt
+  nama         String?    @db.VarChar(255)
+  ukt1         Decimal    @db.Decimal(15, 2)
+  ukt2         Decimal    @db.Decimal(15, 2)
+  ukt3         Decimal    @db.Decimal(15, 2)
+  ukt4         Decimal    @db.Decimal(15, 2)
+  ukt5         Decimal    @db.Decimal(15, 2)
+  ukt6         Decimal    @db.Decimal(15, 2)
+  ukt7         Decimal    @db.Decimal(15, 2)
+  ukt8         Decimal    @db.Decimal(15, 2)
+  created_by   BigInt?    @db.UnsignedBigInt
+  updated_by   BigInt?    @db.UnsignedBigInt
+  deleted_by   BigInt?    @db.UnsignedBigInt
+  created_at   DateTime?  @db.Timestamp(0)
+  updated_at   DateTime?  @db.Timestamp(0)
+  deleted_at   DateTime?  @db.Timestamp(0)
+
+  fakultas_id  BigInt?    @db.UnsignedBigInt
+
+  fakultas     fakultas?  @relation("FakultasJurusan", fields: [fakultas_id], references: [id])
 }
+
 
 model kalender_akademik {
   id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
@@ -134,6 +141,7 @@ model kalender_akademik {
   created_at DateTime? @db.Timestamp(0)
   updated_at DateTime? @db.Timestamp(0)
   deleted_at DateTime? @db.Timestamp(0)
+  is_active  String?   @db.VarChar(1)
 }
 
 model migrations {
@@ -208,4 +216,35 @@ model users {
   remember_token    String?   @db.VarChar(100)
   created_at        DateTime? @db.Timestamp(0)
   updated_at        DateTime? @db.Timestamp(0)
+}
+
+model buku_panduan {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama       String?   @db.VarChar(255)
+  tahun      String?   @db.VarChar(255)
+  nama_file  String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
+}
+
+model contacts {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+}
+
+model utilities {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  slug       String?   @db.VarChar(255)
+  data       String?   @db.LongText
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
 }

@@ -1,7 +1,6 @@
 import Sidebar from "app/components/sidebar";
 import {  MenuItems3 } from "app/data/menu";
 import BiroSection from "app/section/BiroSection";
-import Image from "next/image";
  
 export type MenuItem = {
   label: string;

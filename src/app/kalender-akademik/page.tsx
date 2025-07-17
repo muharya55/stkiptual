@@ -8,76 +8,7 @@ export type MenuItem = {
   label: string;
   href: string;
 };
-
-interface JadwalAkademik {
-  no: number;
-  kegiatan: string;
-  tanggal: string;
-}
-
-const uktList: JadwalAkademik[] = [
-  {
-    "no": 1,
-    "kegiatan": "Registrasi Administrasi bagi mahasiswa lama (pembayaran UKT/SPP)",
-    "tanggal": "28 Juli 2025 – 8 Agustus 2025"
-  },
-  {
-    "no": 2,
-    "kegiatan": "Registrasi Akademik (pengisian KRS) mahasiswa lama",
-    "tanggal": "1 – 10 Agustus 2025"
-  },
-  {
-    "no": 3,
-    "kegiatan": "Batas akhir batal tambah dan pembatalan mata kuliah",
-    "tanggal": "Kebijakan penentuan tanggal diserahkan Fakultas masing-masing"
-  },
-  {
-    "no": 4,
-    "kegiatan": "Pelaksanaan Pengenalan Kehidupan Kampus Mahasiswa Baru Tahun Akademik 2025/2026",
-    "tanggal": "11-16 Agustus 2025"
-  },
-  {
-    "no": 5,
-    "kegiatan": "Perkuliahan + Ujian Tengah Semester (UTS) + Ujian Akhir Semester (UAS)",
-    "tanggal": "18 Agustus – 20 Desember 2025"
-  },
-  {
-    "no": 6,
-    "kegiatan": "Rekonsiliasi Data Mahasiswa",
-    "tanggal": "15 – 26 September 2025"
-  },
-  {
-    "no": 7,
-    "kegiatan": "Pelaporan PD-Dikti Semester Pelaporan 2024.2 dan 2025.1 (maba)",
-    "tanggal": "Penentuan tanggal sesuai dengan ketentuan PD-Dikti"
-  },
-  {
-    "no": 8,
-    "kegiatan": "Batas akhir pengumuman nilai ujian dan pengisian KHS",
-    "tanggal": "2 Januari 2026"
-  },
-  {
-    "no": 9,
-    "kegiatan": "Proses evaluasi keberhasilan studi mahasiswa",
-    "tanggal": "5 Januari 2026"
-  },
-  {
-    "no": 10,
-    "kegiatan": "Batas akhir pelaksanaan Yudisium *)",
-    "tanggal": "7 Januari 2026"
-  },
-  {
-    "no": 11,
-    "kegiatan": "Batas akhir proses Keputusan keberhasilan studi mahasiswa",
-    "tanggal": "9 Januari 2026"
-  },
-  {
-    "no": 12,
-    "kegiatan": "Batas akhir Semester Ganjil",
-    "tanggal": "10 Januari 2026"
-  }
-];
-
+ 
 const KalenderAkademik = () => {
   return (
     <div className="container my-5">

@@ -9,113 +9,113 @@ export type MenuItem = {
   href: string;
 };
 
-type UktData = {
-  programStudi: string;
-  ukt: {
-    [semester: string]: string;
-  };
-};
+// type UktData = {
+//   programStudi: string;
+//   ukt: {
+//     [semester: string]: string;
+//   };
+// };
 
-const uktList: UktData[] = [
-  {
-    programStudi: "Pendidikan Bahasa dan Sastra Indonesia",
-    ukt: {
-      I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
-      V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Bahasa Inggris",
-    ukt: {
-      I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
-      V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Biologi",
-    ukt: {
-      I: "600.000", II: "1.200.000", III: "2.400.000", IV: "3.600.000",
-      V: "4.800.000", VI: "6.000.000", VII: "7.200.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Fisika",
-    ukt: {
-      I: "550.000", II: "1.100.000", III: "2.200.000", IV: "3.300.000",
-      V: "4.400.000", VI: "5.500.000", VII: "6.600.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Kimia",
-    ukt: {
-      I: "600.000", II: "1.100.000", III: "2.200.000", IV: "3.300.000",
-      V: "4.400.000", VI: "5.500.000", VII: "6.600.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Matematika",
-    ukt: {
-      I: "550.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
-      V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Ekonomi",
-    ukt: {
-      I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
-      V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Pancasila dan Kewarganegaraan",
-    ukt: {
-      I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
-      V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
-    },
-  },
-  {
-    programStudi: "Mata Kuliah Umum",
-    ukt: {
-      I: "400.000", II: "800.000", III: "1.200.000", IV: "1.600.000",
-      V: "2.000.000", VI: "2.400.000", VII: "2.800.000",
-    },
-  },
-  {
-    programStudi: "Teknologi Pendidikan",
-    ukt: {
-      I: "550.000", II: "1.100.000", III: "2.200.000", IV: "3.300.000",
-      V: "4.400.000", VI: "5.500.000", VII: "6.600.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Guru Sekolah Dasar (PGSD)",
-    ukt: {
-      I: "600.000", II: "1.200.000", III: "2.400.000", IV: "3.600.000",
-      V: "4.800.000", VI: "6.000.000", VII: "7.200.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Guru Pendidikan Anak Usia Dini (PGPAUD)",
-    ukt: {
-      I: "600.000", II: "1.200.000", III: "2.400.000", IV: "3.600.000",
-      V: "4.800.000", VI: "6.000.000", VII: "7.200.000",
-    },
-  },
-  {
-    programStudi: "Program Pendidikan Profesi Guru (PPG)",
-    ukt: {
-      I: "2.000.000", II: "3.000.000", III: "4.000.000", IV: "5.000.000",
-      V: "6.000.000", VI: "7.000.000", VII: "8.000.000",
-    },
-  },
-  {
-    programStudi: "Pendidikan Agama Islam (PAI)",
-    ukt: {
-      I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
-      V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
-    },
-  },
-];
+// const uktList: UktData[] = [
+//   {
+//     programStudi: "Pendidikan Bahasa dan Sastra Indonesia",
+//     ukt: {
+//       I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
+//       V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Bahasa Inggris",
+//     ukt: {
+//       I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
+//       V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Biologi",
+//     ukt: {
+//       I: "600.000", II: "1.200.000", III: "2.400.000", IV: "3.600.000",
+//       V: "4.800.000", VI: "6.000.000", VII: "7.200.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Fisika",
+//     ukt: {
+//       I: "550.000", II: "1.100.000", III: "2.200.000", IV: "3.300.000",
+//       V: "4.400.000", VI: "5.500.000", VII: "6.600.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Kimia",
+//     ukt: {
+//       I: "600.000", II: "1.100.000", III: "2.200.000", IV: "3.300.000",
+//       V: "4.400.000", VI: "5.500.000", VII: "6.600.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Matematika",
+//     ukt: {
+//       I: "550.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
+//       V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Ekonomi",
+//     ukt: {
+//       I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
+//       V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Pancasila dan Kewarganegaraan",
+//     ukt: {
+//       I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
+//       V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
+//     },
+//   },
+//   {
+//     programStudi: "Mata Kuliah Umum",
+//     ukt: {
+//       I: "400.000", II: "800.000", III: "1.200.000", IV: "1.600.000",
+//       V: "2.000.000", VI: "2.400.000", VII: "2.800.000",
+//     },
+//   },
+//   {
+//     programStudi: "Teknologi Pendidikan",
+//     ukt: {
+//       I: "550.000", II: "1.100.000", III: "2.200.000", IV: "3.300.000",
+//       V: "4.400.000", VI: "5.500.000", VII: "6.600.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Guru Sekolah Dasar (PGSD)",
+//     ukt: {
+//       I: "600.000", II: "1.200.000", III: "2.400.000", IV: "3.600.000",
+//       V: "4.800.000", VI: "6.000.000", VII: "7.200.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Guru Pendidikan Anak Usia Dini (PGPAUD)",
+//     ukt: {
+//       I: "600.000", II: "1.200.000", III: "2.400.000", IV: "3.600.000",
+//       V: "4.800.000", VI: "6.000.000", VII: "7.200.000",
+//     },
+//   },
+//   {
+//     programStudi: "Program Pendidikan Profesi Guru (PPG)",
+//     ukt: {
+//       I: "2.000.000", II: "3.000.000", III: "4.000.000", IV: "5.000.000",
+//       V: "6.000.000", VI: "7.000.000", VII: "8.000.000",
+//     },
+//   },
+//   {
+//     programStudi: "Pendidikan Agama Islam (PAI)",
+//     ukt: {
+//       I: "500.000", II: "1.000.000", III: "2.000.000", IV: "3.000.000",
+//       V: "4.000.000", VI: "5.000.000", VII: "6.000.000",
+//     },
+//   },
+// ];
 
 const ProgramStudi = () => {
   return (

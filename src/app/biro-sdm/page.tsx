@@ -1,9 +1,7 @@
 import Sidebar from "app/components/sidebar";
 import {  MenuItems3 } from "app/data/menu";
 import BiroSection from "app/section/BiroSection";
-import { useBiro } from "lib/useBiro";
- import Image from "next/image";
-  
+ 
 // app/data/sidebarMenu.ts
 
 export type MenuItem = {

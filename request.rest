@@ -16,3 +16,6 @@ GET http://localhost:3000/api/fakultas
 
 ###
 GET http://localhost:3000/api/download
+
+###
+GET http://localhost:3000/api/utilities/sejarah

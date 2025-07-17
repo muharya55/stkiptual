@@ -13,6 +13,7 @@ interface Post {
 const Aside: React.FC = () => {
   const { data: infoPosts, isLoading: loadingInfo } = useArtikelByKategori('Info', 1, 3);
   const { data: agendaPosts, isLoading: loadingAgenda } = useArtikelByKategori('Agenda', 1, 3);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const renderPosts = (posts: Post[]) =>
     posts.map((post) => (
@@ -20,7 +21,7 @@ const Aside: React.FC = () => {
         <div className="latest-posts_thumb">
           <Link href={`/berita-detail?slug=${post.slug}`}>
             <Image
-              src={post.thumbnail || '/images/default.jpg'}
+              src={apiUrl+"/storage/"+post.thumbnail || '/images/berita/berita-1.jpeg'}
               alt={post.judul}
               width={90}
               height={90}

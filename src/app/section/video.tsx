@@ -14,7 +14,7 @@ const VideoSection: React.FC = () => {
                     // ref={null}
                     className="course-details-img mb-30 w-100 "
                     // style={{ backgroundImage: "url(/assets/img/course/details/01.jpg)" }}
-                    src="https://www.youtube.com/embed/Y2RzKxMwwxk?feature=oembed"
+                    src="https://www.youtube.com/embed/QADJfhFePgw?feature=oembed"
                 >
                 </iframe>
               </div>

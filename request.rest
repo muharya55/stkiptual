@@ -15,4 +15,4 @@ GET http://localhost:3000/api/prodi
 GET http://localhost:3000/api/fakultas
 
 ###
-GET http://localhost:3000/api/kalender-akademik
+GET http://localhost:3000/api/download

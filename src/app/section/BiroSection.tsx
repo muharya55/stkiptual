@@ -15,7 +15,8 @@ const BiroSection = ({slug}:Props) => {
   if (isError) return <p>Gagal memuat data struktur.</p>;
   if (!biro) return <p>Data tidak ditemukan.</p>;
   // console.log(biro);
-  
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   return (
     <>
       <div className="container">
@@ -31,7 +32,7 @@ const BiroSection = ({slug}:Props) => {
                         </div>
                         <div className="col-md-3 mt-4">
                         <Image  width={1500}
-                                    height={800} alt="Biro" style={{width:"11rem"}} className="mt-2 mb-5" src={'/'+biro.gambar_pimpinan|| "/images/nana-sujana.png"}  /></div>
+                                    height={800} alt="Biro" style={{width:"11rem"}} className="mt-2 mb-5" src={apiUrl+"/storage/" +biro.gambar_pimpinan|| "/images/nana-sujana.png"}  /></div>
                       </div>
                       <div dangerouslySetInnerHTML={{ __html: biro.content }} />
 

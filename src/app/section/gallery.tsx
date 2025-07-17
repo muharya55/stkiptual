@@ -49,7 +49,7 @@ console.log(galleryItems);
                   src={`${process.env.NEXT_PUBLIC_API_URL}/storage/${item.gambar}` || '/images/berita-1.jpeg'}
 
                   alt={`Gallery ${index ??0 + 1}`}
-                  label="Kampus Dharmawangsa - B"
+                  label={item.deskripsi ||''}
                 />
               </div>
             ))}

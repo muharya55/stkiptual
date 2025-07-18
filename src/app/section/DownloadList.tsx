@@ -16,7 +16,7 @@ export default function DownloadList() {
   return (
     <div className="container">
       <div className="row gy-30px mt-5">
-        {downloadData?.map((item, index) => {
+        {downloadData?.map((item) => {
           const isLongTitle = item.judul.length > 32 ? { width: "25%" } : { width: "16%" };
 
           return (

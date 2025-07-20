@@ -1,24 +1,24 @@
 import BerDetail from 'app/section/berDetail';
 
-type Artikel = {
-  judul: string;
-  slug: string;
-  kategori: string;
-  thumbnail: string;
-  image: string;
-  content: string;
-  created_at: string;
-};
+// type Artikel = {
+//   judul: string;
+//   slug: string;
+//   kategori: string;
+//   thumbnail: string;
+//   image: string;
+//   content: string;
+//   created_at: string;
+// };
 
 // interface SearchPageProps {
 //   searchParams: Promise<{ slug?: string }>;
 // }
 
-interface SearchPageProps {
-  searchParams: {
-    slug?: string;
-  };
-}
+// interface SearchPageProps {
+//   searchParams: {
+//     slug?: string;
+//   };
+// }
 
 export default async function BeritaDetail( ) {
   

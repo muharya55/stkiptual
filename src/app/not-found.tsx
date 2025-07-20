@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -15,7 +15,7 @@ export default function NotFound() {
               <h2 className="page-404__title mb-10px text-capitalize">
                 404 <span className="page-404__hl">error!</span>
               </h2>
-              <p>Sorry, we can't find the page you are looking for. Please go to</p>
+              <p>Sorry, we can t find the page you are looking for. Please go to</p>
               <a
                 href="index.html"
                 className="page-404__back transition-all text-capitalize"

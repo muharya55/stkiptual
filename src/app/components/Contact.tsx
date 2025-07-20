@@ -1,14 +1,10 @@
 'use client';
 
-import { useRef } from "react";
-
 const Contact = () => {
-      const formRef = useRef<HTMLFormElement>(null);
-
+ 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = formRef.current;
-    // if (!form) return;
+     // if (!form) return;
 
     const formData = new FormData(e.currentTarget);
 

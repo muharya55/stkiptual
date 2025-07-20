@@ -1,51 +1,18 @@
 import BerDetail from 'app/section/berDetail';
+import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
-
-// type Artikel = {
-//   judul: string;
-//   slug: string;
-//   kategori: string;
-//   thumbnail: string;
-//   image: string;
-//   content: string;
-//   created_at: string;
-// };
-
-// interface SearchPageProps {
-//   searchParams: Promise<{ slug?: string }>;
-// }
-
-// interface SearchPageProps {
-//   searchParams: {
-//     slug?: string;
-//   };
-// }
-
+ 
 export default async function BeritaDetail( ) {
   
-    // const slug = params.slug || '';
-
-    // if (!slug) {
-    //   return <p className="text-center">Slug tidak ditemukan</p>;
-    // }
-
-    // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/artikel/${slug}`, {
-    //   cache: 'no-store',
-    // });
-
-    // if (!res.ok) {
-    //   return <p className="text-center">Artikel tidak ditemukan</p>;
-    // }
-
-    // const artikel: Artikel = await res.json();
-
+    const searchParams = useSearchParams();
+ 
     return (
       <section className="blog-single-simple pt-20px pb-80px">
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-12 mb-30px mb-lg-0">
               <Suspense fallback={<p>Memuat halaman berita...</p>}>
-                <BerDetail  />
+                <BerDetail searchParams={searchParams} />
               </Suspense>
             </div>
           </div>

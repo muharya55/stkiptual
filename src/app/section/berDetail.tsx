@@ -1,12 +1,13 @@
 "use client"
 import { useBeritaDetail } from "lib/useBeritaDetail";
 import Image from "next/image"
-import { useSearchParams } from "next/navigation";
- 
+import { ReadonlyURLSearchParams } from "next/navigation";
 
-const BerDetail = () => {
-    const searchParams = useSearchParams();
-    const slug = searchParams.get('slug') ||''; // <-- ambil slug dari query string
+type Props = {
+  searchParams: ReadonlyURLSearchParams;
+};
+const BerDetail = ({ searchParams }: Props) => {
+  const slug = searchParams.get('slug') || '';
 
     const { data :artikel, isLoading, isError } = useBeritaDetail(slug);
 

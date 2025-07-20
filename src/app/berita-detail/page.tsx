@@ -14,15 +14,19 @@ type Artikel = {
 //   searchParams: Promise<{ slug?: string }>;
 // }
 
-interface SearchPageProps {
-  searchParams: {
-    slug?: string;
-  };
-}
+// interface SearchPageProps {
+//   searchParams: {
+//     slug?: string;
+//   };
+// }
 
-export default async function BeritaDetail({ searchParams }: SearchPageProps) {
+export default async function BeritaDetail({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
   try {
-    const slug = searchParams.slug || '';
+  const slug = (await searchParams).slug
 
     if (!slug) {
       return <p className="text-center">Slug tidak ditemukan</p>;

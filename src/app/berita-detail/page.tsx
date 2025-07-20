@@ -1,6 +1,8 @@
 import BerDetail from 'app/section/berDetail';
 import { Suspense } from 'react';
  
+export const dynamic = 'force-dynamic'; // <- WAJIB
+
 export default async function BeritaDetail( ) {
   
     // const slug = params.slug || '';

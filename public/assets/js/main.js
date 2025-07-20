@@ -848,12 +848,12 @@ if(document.readyState == 'complete'){
             document.body.classList.toggle('overlay-body');
         });
 
-        document.addEventListener('click', function (event) {
-            if (!coursesPageFt.contains(event.target) && !courseFtMb.contains(event.target)) {
-                coursesPageFt.classList.remove('active');
-                document.body.classList.remove('overlay-body');
-            }
-        });
+        // document.addEventListener('click', function (event) {
+        //     if (!coursesPageFt.contains(event.target) && !courseFtMb.contains(event.target)) {
+        //         coursesPageFt.classList.remove('active');
+        //         document.body.classList.remove('overlay-body');
+        //     }
+        // });
     }
 
     // WOW Transform Effects

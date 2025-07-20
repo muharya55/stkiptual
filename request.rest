@@ -5,7 +5,7 @@ GET http://localhost:3000/api/artikel
 GET http://localhost:3000/api/galeri
 
 ###
-GET http://localhost:3000/api/artikel/fakultas-biologi-ugm-tambah-tiga-guru-besar
+GET http://localhost:3000/api/artikel/daftar-calon-wisudawanwisudawati-universitas-pgri-yogyakarta-periode-lll-offline-28-juni-2025-tahun-akademik-20242025
 ###
 GET http://localhost:3000/api/biro/biro-akademik
 
@@ -19,3 +19,7 @@ GET http://localhost:3000/api/download
 
 ###
 GET http://localhost:3000/api/utilities/sejarah
+
+###
+GET http://localhost:3000/api/struktur-organisasi
+

@@ -1,6 +1,9 @@
  
 // app/data/sidebarMenu.ts
 
+import Contact from "app/components/Contact";
+import SearchBerita from "app/section/SearchBerita";
+
 export type MenuItem = {
   label: string;
   href: string;
@@ -65,44 +68,8 @@ const Kontak = () => {
                 </div>
               </div>
             </div>
-            <div className="contact-box_right">
-              <h5 className="fw-semibold text-white mb-20px">
-                Didnt Find The Answer?
-              </h5>
-              <form className="contact-box_right_form" id="contactForm">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Nama "
-                />
-                <input
-                  type="text"
-                  id="nim"
-                  name="nim"
-                  placeholder="Nim "
-                />
-                <input
-                  type="text"
-                  id="jurusan"
-                  placeholder="Jurusan"
-                  name="jurusan"
-                />
-                <textarea
-                  id="pesan"
-                  name="pesan"
-                  rows={5}
-                  placeholder="Pesan "
-                   
-                />
-                <button
-                  type="submit"
-                  className="button text-white button-type-02 fw-medium text-uppercase transition-all"
-                >
-                  Submit Now
-                </button>
-              </form>
-            </div>
+            <Contact/>
+            <SearchBerita/>
           </div>
         </div>
       </div>

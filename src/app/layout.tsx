@@ -5,6 +5,7 @@ import Link from "next/link";
 import HomeClientInit from "./utils/HomeClientInit";
 import Footer from "./section/footer";
 import Navbar from "./components/Navbar";
+import SearchBerita from "./section/SearchBerita";
  
 export default function RootLayout({
   children,
@@ -69,7 +70,8 @@ export default function RootLayout({
       </span>
     </Link>
   </div>
-  <div className="search-wrapper">
+  <SearchBerita/>
+  {/* <div className="search-wrapper">
     <div className="search-overlay" />
     <div className="search-popup">
       <form action="#" method="GET">
@@ -87,7 +89,7 @@ export default function RootLayout({
         </button>
       </form>
     </div>
-  </div>
+  </div> */}
   <div className="modal-form-login uni-form-login">
     <div className="container">
       <div className="row">

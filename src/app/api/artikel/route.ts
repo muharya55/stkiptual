@@ -15,13 +15,24 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const kategori = searchParams.get("kategori") || "";
   const search = searchParams.get("search") || "";
+  // const search = searchParams.get("q") || "";
   const page = parseInt(searchParams.get("page") || "1", 10);
   const limit = parseInt(searchParams.get("limit") || "6", 10);
   const offset = (page - 1) * limit;
   const whereCondition: Prisma.artikelWhereInput = {};
+  const selectCondition: Prisma.artikelSelect = {
+        judul: true,
+        slug: true,
+        kategori: true,
+        image: true,
+        created_at: true
+  };
 
-  if (kategori) {
+  if (kategori && kategori !='all') {
     whereCondition.kategori = { equals: kategori };
+  }
+  if (kategori && kategori =='all') {
+    selectCondition.content =  true;
   }
 
   if (search) {
@@ -37,13 +48,7 @@ export async function GET(req: Request) {
       orderBy: { id: "desc" },
       skip: offset,
       take: limit,
-      select: {
-        judul: true,
-        slug: true,
-        kategori: true,
-        image: true,
-        created_at: true,
-      },
+      select: selectCondition,
     }),
     prisma.artikel.count({ where: whereCondition }),
   ]);

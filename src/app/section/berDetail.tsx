@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import React from "react";
 
@@ -26,10 +25,11 @@ const BerDetail = ({ artikel }: Props) => {
               <Image
                 src={`${apiUrl}/storage/${artikel.image}` || '/images/berita/berita-1.jpeg'} 
                 alt={artikel.judul}
-                height={400}
+                height={200}
                 width={950}
                 className="mb-30px"
-                style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                style={{ width: '100%', height: '70%', objectFit: 'cover' }}
+                 loading="eager"
               />
               <h1 className="fs-30 fw-bolder mb-10px">{artikel.judul}</h1>
               <div className="text-muted fs-14 mb-20px">

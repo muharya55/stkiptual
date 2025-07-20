@@ -14,7 +14,6 @@ import { useArtikelByKategori } from 'lib/useArtikel';
 const BeritaSection: React.FC = () => {
   const [page, setPage] = useState(1);
   const { data, meta, isLoading } = useArtikelByKategori("Pengumuman", page, 6);
-  // console.log(data);
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   return (

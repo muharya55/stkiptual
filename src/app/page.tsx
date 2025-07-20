@@ -3,6 +3,7 @@ import AlumniSection from "./section/alumni";
 import BeritaSection from "./section/berita";
 import GallerySection from "./section/gallery";
 import VideoSection from "./section/video";
+import SearchBerita from "./section/SearchBerita";
 
  
 export default function Home() {
@@ -89,6 +90,7 @@ export default function Home() {
         </div>
       </section>
       <BeritaSection/>
+      {/* <SearchBerita/> */}
       
       <AlumniSection/>
       <GallerySection/>

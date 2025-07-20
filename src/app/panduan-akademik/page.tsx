@@ -1,5 +1,6 @@
 import Sidebar from "app/components/sidebar";
 import {  MenuItems2 } from "app/data/menu";
+import PanduanList from "app/section/PanduanList";
  
 // app/data/sidebarMenu.ts
 
@@ -43,66 +44,7 @@ const PanduanAkademik = () => {
               }}
             ></div>
           </div>
-          <div className="container my-5">
-            <h5 className="fw-bold text-purple">2025</h5>
-            <ol className="mt-3 text-dark-blue">
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS ILMU KOMPUTER : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS EKONOMI DAN SOSIAL : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS SAINS DAN TEKNOLOGI : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK PASCASARJANA : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK UNIVERSITAS : <a href="#">buka link</a>
-              </li>
-            </ol>
-          </div>
-          <div className="container my-5">
-            <h5 className="fw-bold text-purple">2024</h5>
-            <ol className="mt-3 text-dark-blue">
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS ILMU KOMPUTER : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS EKONOMI DAN SOSIAL : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS SAINS DAN TEKNOLOGI : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK PASCASARJANA : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK UNIVERSITAS : <a href="#">buka link</a>
-              </li>
-            </ol>
-          </div>
-          <div className="container my-5">
-            <h5 className="fw-bold text-purple">2023</h5>
-            <ol className="mt-3 text-dark-blue">
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS ILMU KOMPUTER : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS EKONOMI DAN SOSIAL : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK FAKULTAS SAINS DAN TEKNOLOGI : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK PASCASARJANA : <a href="#">buka link</a>
-              </li>
-              <li>
-                BUKU PANDUAN AKADEMIK UNIVERSITAS : <a href="#">buka link</a>
-              </li>
-            </ol>
-          </div>
+          <PanduanList/>
 
         </div>
       </div>

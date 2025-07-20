@@ -2,24 +2,9 @@
 import { useBeritaDetail } from "lib/useBeritaDetail";
 import Image from "next/image"
 import { useSearchParams } from "next/navigation";
-// import React from "react";
-
  
-// type Artikel = {
-//   judul: string;
-//   slug: string;
-//   kategori: string;
-//   thumbnail: string;
-//   image: string;
-//   content: string;
-//   created_at: string;
-// };
-// type Props = {
-//   artikel: Artikel;
-// };
 
 const BerDetail = () => {
-  // console.log(artikel);
     const searchParams = useSearchParams();
     const slug = searchParams.get('slug') ||''; // <-- ambil slug dari query string
 

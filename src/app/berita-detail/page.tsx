@@ -1,4 +1,5 @@
 import BerDetail from 'app/section/berDetail';
+import { Suspense } from 'react';
 
 // type Artikel = {
 //   judul: string;
@@ -43,7 +44,9 @@ export default async function BeritaDetail( ) {
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-12 mb-30px mb-lg-0">
-              <BerDetail  />
+              <Suspense fallback={<p>Memuat halaman berita...</p>}>
+                <BerDetail  />
+              </Suspense>
             </div>
           </div>
         </div>

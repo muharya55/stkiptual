@@ -14,47 +14,40 @@ type Artikel = {
 //   searchParams: Promise<{ slug?: string }>;
 // }
 
-// interface SearchPageProps {
-//   searchParams: {
-//     slug?: string;
-//   };
-// }
+interface SearchPageProps {
+  searchParams: {
+    slug?: string;
+  };
+}
 
-export default async function BeritaDetail({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}) {
-  try {
-  const slug = (await searchParams).slug
+export default async function BeritaDetail( ) {
+  
+    // const slug = params.slug || '';
 
-    if (!slug) {
-      return <p className="text-center">Slug tidak ditemukan</p>;
-    }
+    // if (!slug) {
+    //   return <p className="text-center">Slug tidak ditemukan</p>;
+    // }
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/artikel/${slug}`, {
-      cache: 'no-store',
-    });
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/artikel/${slug}`, {
+    //   cache: 'no-store',
+    // });
 
-    if (!res.ok) {
-      return <p className="text-center">Artikel tidak ditemukan</p>;
-    }
+    // if (!res.ok) {
+    //   return <p className="text-center">Artikel tidak ditemukan</p>;
+    // }
 
-    const artikel: Artikel = await res.json();
+    // const artikel: Artikel = await res.json();
 
     return (
       <section className="blog-single-simple pt-20px pb-80px">
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-12 mb-30px mb-lg-0">
-              <BerDetail artikel={artikel} />
+              <BerDetail  />
             </div>
           </div>
         </div>
       </section>
     );
-  } catch (error) {
-    console.error("Error saat render berita detail:", error);
-    return <p className="text-center">Terjadi kesalahan saat memuat artikel</p>;
-  }
+   
 }

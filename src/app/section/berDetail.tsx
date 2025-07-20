@@ -1,22 +1,33 @@
+"use client"
+import { useBeritaDetail } from "lib/useBeritaDetail";
 import Image from "next/image"
-import React from "react";
+import { useSearchParams } from "next/navigation";
+// import React from "react";
 
  
-type Artikel = {
-  judul: string;
-  slug: string;
-  kategori: string;
-  thumbnail: string;
-  image: string;
-  content: string;
-  created_at: string;
-};
-type Props = {
-  artikel: Artikel;
-};
+// type Artikel = {
+//   judul: string;
+//   slug: string;
+//   kategori: string;
+//   thumbnail: string;
+//   image: string;
+//   content: string;
+//   created_at: string;
+// };
+// type Props = {
+//   artikel: Artikel;
+// };
 
-const BerDetail = ({ artikel }: Props) => {
+const BerDetail = () => {
   // console.log(artikel);
+    const searchParams = useSearchParams();
+    const slug = searchParams.get('slug') ||''; // <-- ambil slug dari query string
+
+    const { data :artikel, isLoading, isError } = useBeritaDetail(slug);
+
+    if (isLoading) return <p>Memuat data...</p>;
+    if (isError) return <p>Gagal memuat data struktur.</p>;
+    if (!artikel) return <p>Data tidak ditemukan.</p>;
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   return (

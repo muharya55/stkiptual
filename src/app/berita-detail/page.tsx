@@ -10,13 +10,19 @@ type Artikel = {
   created_at: string;
 };
 
+// interface SearchPageProps {
+//   searchParams: Promise<{ slug?: string }>;
+// }
+
 interface SearchPageProps {
-  searchParams: Promise<{ slug?: string }>;
+  searchParams: {
+    slug?: string;
+  };
 }
 
 export default async function BeritaDetail({ searchParams }: SearchPageProps) {
   try {
-    const { slug } = await searchParams;
+    const slug = searchParams.slug || '';
 
     if (!slug) {
       return <p className="text-center">Slug tidak ditemukan</p>;

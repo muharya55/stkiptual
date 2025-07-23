@@ -32,6 +32,7 @@ const BiroSection = ({slug}:Props) => {
                         </div>
                         <div className="col-md-3 mt-4">
                         <Image  width={1500}
+                        unoptimized
                                     height={800} alt="Biro" style={{width:"11rem"}} className="mt-2 mb-5" src={apiUrl+"/storage/" +biro.gambar_pimpinan|| "/images/nana-sujana.png"}  /></div>
                       </div>
                       <div dangerouslySetInnerHTML={{ __html: biro.content }} />

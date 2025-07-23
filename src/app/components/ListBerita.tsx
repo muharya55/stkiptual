@@ -118,6 +118,7 @@ const ListBerita = () => {
                           alt={item.judul || "Tanpa judul"}
                           width={200}
                           height={70}
+                          unoptimized
                           className="img-courses"
                         />
                       </a>

@@ -10,7 +10,7 @@ type NewsCardProps = {
 const NewsCard = ({ image, title, date, excerpt, link }: NewsCardProps) => {
   return (
     <div className="news-card">
-      <Image src={image} alt={title} width={300} height={180} />
+      <Image src={image} alt={title} width={300}unoptimized height={180} />
       <h5>{title}</h5>
       <p className="date">{date}</p>
       <p>{excerpt}</p>

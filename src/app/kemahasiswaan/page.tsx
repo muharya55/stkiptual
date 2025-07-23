@@ -35,7 +35,7 @@ const Kemahasiswaan = () => {
 
           <div className="mt-5">
             <Image  width={1500}
-            height={800} alt="Struktur" style={{width:"100%"}} className="mt-2 mb-5" src="/images/gallery/kemahasiswaan-1.png"  />
+            height={800} alt="Struktur"  style={{width:"100%"}} className="mt-2 mb-5" src="/images/gallery/kemahasiswaan-1.png"  />
           </div>
         </div>
         <div className="col-12 col-lg-6">

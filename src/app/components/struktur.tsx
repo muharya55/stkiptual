@@ -45,6 +45,7 @@ const Struktur = () => {
                       src={`${process.env.NEXT_PUBLIC_API_URL}/storage/${member.gambar}` || '/images/berita-1.jpeg'}
                       alt={member.nama}
                       width={200}
+                      unoptimized
                       height={100}
                       className="mb-2"
                     />

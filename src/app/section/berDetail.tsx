@@ -23,6 +23,7 @@ const BerDetail = () => {
                 alt={artikel.judul}
                 height={200}
                 width={950}
+                unoptimized
                 className="mb-30px"
                 style={{ width: '100%', height: '70%', objectFit: 'cover' }}
                  loading="eager"

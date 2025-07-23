@@ -31,7 +31,7 @@ const AlumniSection = () => {
                   <Image
                     // src={item.gambar}
                     src={`${process.env.NEXT_PUBLIC_API_URL}/storage/${item.gambar}` || '/images/berita-1.jpeg'}
-
+                    unoptimized
                     alt={item.nama}
                     width={200}
                     height={100}

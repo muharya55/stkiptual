@@ -27,6 +27,7 @@ const Aside: React.FC = () => {
               src={apiUrl+"/storage/"+post.image || '/images/berita/berita-1.jpeg'}
               alt={post.judul}
               width={90}
+              unoptimized
               height={90}
               style={{ objectFit: 'cover' }}
             />

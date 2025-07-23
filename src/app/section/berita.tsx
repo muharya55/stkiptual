@@ -36,6 +36,7 @@ const BeritaSection: React.FC = () => {
                           alt={`Image of ${item.judul}`}
                           width={300}
                           height={200}
+                          unoptimized
                           style={{ width: '100%', height: 'auto' }}
                         />
                       </a>

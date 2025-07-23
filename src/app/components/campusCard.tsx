@@ -16,6 +16,7 @@ const CampusCard = ({
           <Image
             src={src}
             alt={alt}
+            unoptimized
             fill
             style={{ objectFit: "cover", borderTopLeftRadius: "20px", borderTopRightRadius: "20px",cursor:"pointer" }}
           />

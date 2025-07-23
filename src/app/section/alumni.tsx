@@ -12,6 +12,8 @@ const AlumniSection = () => {
   if (isLoading) return <p className="text-center">Loading alumni...</p>;
   if (isError) return <p className="text-center text-danger">Gagal memuat alumni.</p>;
 
+  console.log(alumni);
+  
   // const repeated = [...alumniData, ...alumniData];
 
   return (

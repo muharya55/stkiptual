@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   //   domains: ['http://103.127.133.37'], // tambahkan IP atau domain
   // },
   images: {
-    remotePatterns: [new URL('http://103.127.133.37/**')],
+    remotePatterns: [new URL('https://admin.stkip.ac.id/**')],
   },
 };
 

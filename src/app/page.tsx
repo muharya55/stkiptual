@@ -77,8 +77,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="swiper-button-next swiper-nextBtn-style-02 edm-swiper-button-next-sluni transition-all" />
-        <div className="swiper-button-prev swiper-preBtn-style-02 edm-swiper-button-prev-sluni transition-all" />
+        {/* <div className="swiper-button-next swiper-nextBtn-style-02 edm-swiper-button-next-sluni transition-all" />
+        <div className="swiper-button-prev swiper-preBtn-style-02 edm-swiper-button-prev-sluni transition-all" /> */}
         <div className="theme-scroll uni-banner__scroll">
           <a href="#section-welcome" className="cursor-pointer">
             <i

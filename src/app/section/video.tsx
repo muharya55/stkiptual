@@ -1,16 +1,15 @@
 "use client"
 
-import { useUtilities } from "lib/useUtilities";
+import useSWR from "swr";
 
 const VideoSection: React.FC = () => {
-   const { data :url, isLoading, isError } = useUtilities('video-url');
-   const { data :content, isLoading:IsLoadingC, isError:isErrorC } = useUtilities('video-content');
-          
-            if (isLoading  ||IsLoadingC) return <p>Memuat data...</p>;
-            if (isError ||isErrorC) return <p>Gagal memuat data struktur.</p>;
-            if (!content || !url) return <p>Data tidak ditemukan.</p>;
-            // console.log(url);
-            
+  const { data , isLoading } = useSWR('/api/utilities', null)  ;
+ 
+  if (!data || isLoading  ) return <p>Memuat data...</p>; 
+  const hasil = data?.filter((item: {slug:string}) => item.slug ==='video-url' ||item.slug ==='video-content');
+  const url = hasil.find((item: {slug:string}) => item.slug==='video-url')
+  const content = hasil.find((item: {slug:string}) => item.slug==='video-content')
+
   return (
     <>
       <section className="gallery-page mt-40px mb-80px mt-3">
@@ -19,7 +18,7 @@ const VideoSection: React.FC = () => {
              <div className="col-md-6">
               <h3>Profil Kampus</h3>
               <div className="">
-                <div dangerouslySetInnerHTML={{ __html: content.data }} />
+                <div dangerouslySetInnerHTML={{ __html: content?.data }} />
 
               </div>
               {/* <p className="mt-3">Webiste Biro Keuangan hadir sebagai media informasi terkait profil Kantor Keuangan, khususnya layanan administrasi keuangan untuk segenap sivitas akademik Universitas Muhammadiyah Sumatera Utara, mencakup fakultas, program studi, unit, dan mahasiswa. Beberapa informasi penunjang yang sejalan dengan core business Kantor Keuangan juga disediakan, antara lain: ketentuan registrasi, ketentuan dispensasi, standard operational procedure (SOP) layanan administrasi keuangan, dll.</p> */}
@@ -29,7 +28,7 @@ const VideoSection: React.FC = () => {
                     // ref={null}
                     className="course-details-img mb-30 w-100 "
                     // style={{ backgroundImage: "url(/assets/img/course/details/01.jpg)" }}
-                    src={`https://www.youtube.com/embed/${url.data.replace(/<\/?[^>]+(>|$)/g, "")}?feature=oembed`}
+                    src={`https://www.youtube.com/embed/${url.data?.replace(/<\/?[^>]+(>|$)/g, "")}?feature=oembed`}
                 >
                 </iframe>
               </div>

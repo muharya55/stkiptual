@@ -15,8 +15,7 @@ const Aside: React.FC = () => {
   const { data: infoPosts, isLoading: loadingInfo } = useArtikelByKategori('Info', 1, 3);
   const { data: agendaPosts, isLoading: loadingAgenda } = useArtikelByKategori('Agenda', 1, 3);
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
- console.log({agendaPosts});
- console.log({infoPosts});
+ 
  
   const renderPosts = (posts: Post[]) =>
     posts.map((post) => (

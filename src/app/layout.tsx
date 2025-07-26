@@ -19,24 +19,24 @@ export default function RootLayout({
       <title>STKIP EVAV TUAL </title>
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="author" content="ThimPress" />
+      <meta name="author" content="Arya Wardhana" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta
         name="description"
-        content="Elevate your online presence with Sanjaya"
+        content="STKIP EVAV PERSADA TUAL"
       />
       {/* Favicon icon */}
-      <link rel="shortcut icon" href="/images/favicon.png" />
+      <link rel="shortcut icon" href="/images/logo/bg-univ-2.PNG" />
       <link
         rel="apple-touch-icon"
         sizes="32x32"
-        href="/images/apple-touch-icon-32x32.png"
+        href="/images/logo/bg-univ-2.PNG"
       />
-      <link
+      {/* <link
         rel="apple-touch-icon"
         sizes="192x192"
         href="/images/apple-touch-icon-192x192.png"
-      />
+      /> */}
       {/* Style */}
       <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
       <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
@@ -56,7 +56,6 @@ export default function RootLayout({
     </div> */}
   {/* <div className="" style={{position:"fixed",width:"100%",zIndex:"99"}}> */}
    <Navbar/>
-  {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
   <div className="" style={{paddingTop:"4.5rem"}}>
     {children}  
   </div>

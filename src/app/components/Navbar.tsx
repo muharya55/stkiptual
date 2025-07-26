@@ -1,15 +1,38 @@
 'use client';
+import { useAllUtilities } from "lib/useUtilities";
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
+import { BsFacebook, BsInstagram, BsWhatsapp, BsYoutube } from "react-icons/bs";
+import { CiMail } from "react-icons/ci";
 
  
 
 const Navbar = () => {
 
-  const pathname = usePathname() =='/';
-//   console.log({pathname});
-  const margintop = pathname ? "1px" : "-40px";
+    const pathname = usePathname() =='/';
+    const margintop = pathname ? "1px" : "-40px";
+    const { data :util, isLoading, isError } = useAllUtilities();
+
+    if (isLoading) return <p>Memuat data...</p>;
+    if (isError) return <p>Gagal memuat data struktur.</p>;
+    if (!util) return <p>Data tidak ditemukan.</p>; 
+
+    // console.log(util);
+    
+    const selectedIds = ['telephone-icon','email-icon','whatsapp-icon','facebook-icon','instagram-icon','youtube-icon','gmail-icon']
+
+    const hasil = util.filter((ut :{slug:string}) => selectedIds.includes(ut.slug))
+   
+    const whatsapp = hasil.find((item: {slug:string}) => item.slug==='whatsapp-icon')
+    const gmail = hasil.find((item: {slug:string}) => item.slug==='gmail-icon')
+    const youtube = hasil.find((item: {slug:string}) => item.slug==='youtube-icon')
+    const instagram = hasil.find((item: {slug:string}) => item.slug==='instagram-icon')
+    const facebook = hasil.find((item: {slug:string}) => item.slug==='facebook-icon')
+    const email = hasil.find((item: {slug:string}) => item.slug==='email-icon')
+    const telephone = hasil.find((item: {slug:string}) => item.slug==='telephone-icon')
+ 
+    
   return (
     <>
       <div className="" style={{position:"fixed",width:"100%",zIndex:"99",marginTop:margintop}}>
@@ -20,17 +43,17 @@ const Navbar = () => {
                     <div className="d-flex flex-wrap align-items-center gap-10px">
                     <div className="notification__phone d-flex align-items-center gap-5px">
                         <i className="iconify fs-18" data-icon="iconoir:phone" />
-                        <span className="d-none d-xl-block">(+88) 1990 6886</span>
+                        <span className="d-none d-xl-block">{telephone?.deskripsi ||''}</span>
                     </div>
                     <div className="notification__mail d-flex align-items-center gap-5px">
                         <i className="iconify fs-18" data-icon="tabler:mail-check" />
                         <span className="d-none d-xl-block">
                         <Link
-                            href="https://html.thimpress.com/cdn-cgi/l/email-protection"
+                            href="#"
                             className="__cf_email__"
                             data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
                         >
-                            [email&nbsp;protected]
+                            {email?.deskripsi ||''}
                         </Link>
                         </span>
                     </div>
@@ -41,51 +64,23 @@ const Navbar = () => {
                     <div className="d-flex align-items-center justify-content-end">
                     {/* <div className=""></div> */}
                     <div className="px-3">
-                        <span className="iconify fs-24 mr-10px " data-icon="entypo-social:facebook" >
-                        <Link
-                            href="https://html.thimpress.com/cdn-cgi/l/email-protection"
-                            className="__cf_email__"
-                            data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
-                        >
-                            [email&nbsp;protected]
+                        <Link href={facebook?.url ||'#'} className="__cf_email__ px-1" data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
+                        > <BsFacebook size={21} />
                         </Link>
-                        </span>
-                        <span className="iconify fs-24 mr-10px" data-icon="entypo-social:instagram" >
-                        <Link
-                            href="https://html.thimpress.com/cdn-cgi/l/email-protection"
-                            className="__cf_email__"
-                            data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
-                        >
-                            [email&nbsp;protected]
+                        <Link href={instagram?.url ||'#'} className="__cf_email__ px-1" data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
+                        > <BsInstagram size={21} />
                         </Link>
-                        </span>
-                        <span className="iconify fs-24 mr-10px" data-icon="entypo-social:youtube" >
-                        <Link
-                            href="https://html.thimpress.com/cdn-cgi/l/email-protection"
-                            className="__cf_email__"
-                            data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
-                        >
-                            [email&nbsp;protected]
+                        <Link href={youtube?.url ||'#'} className="__cf_email__ px-1" data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
+                        > <BsYoutube size={21} />
                         </Link>
-                        </span>
-                        <span className="iconify fs-24 mr-10px" data-icon="tabler:brand-whatsapp" >
-                        <Link
-                            href="https://html.thimpress.com/cdn-cgi/l/email-protection"
-                            className="__cf_email__"
-                            data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
-                        >
-                            [email&nbsp;protected]
+                        <Link href={whatsapp?.url ||'#'} className="__cf_email__ px-1" data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
+                        > <BsWhatsapp size={21} />
+                        </Link> 
+                        <Link href={gmail?.url ||'#'} className="__cf_email__ px-1" data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
+                        > <CiMail size={21} />
                         </Link>
-                        </span>
-                        <span className="iconify fs-24 mr-10px" data-icon="tabler:brand-gmail" >
-                        <Link
-                            href="https://html.thimpress.com/cdn-cgi/l/email-protection"
-                            className="__cf_email__"
-                            data-cfemail="04676b6a7065677044706c6d6974766177772a676b69"
-                        >
-                            [email&nbsp;protected]
-                        </Link>
-                        </span>
+  
+                          
                     </div> 
                     <ul className="notification-page d-flex align-items-center">
                         <li className="d-none d-xl-block">

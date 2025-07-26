@@ -15,8 +15,7 @@ const BeritaSection: React.FC = () => {
   const [page, setPage] = useState(1);
   const { data, meta, isLoading } = useArtikelByKategori("Pengumuman", page, 6);
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  console.log(data);
-  
+   
   return (
     <section className="uni-campus pt-80px pb-80px">
       <div className="container">

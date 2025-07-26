@@ -12,3 +12,12 @@ export function useUtilities(slug: string) {
     isError: error,
   };
 }
+export function useAllUtilities() {
+  const { data, error } = useSWR('/api/utilities', fetcher);
+
+  return {
+    data,
+    isLoading: !data && !error,
+    isError: error,
+  };
+}

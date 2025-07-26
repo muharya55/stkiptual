@@ -19,9 +19,7 @@ const GallerySection: React.FC = () => {
   
     if (isLoading) return <p className="text-center">Loading Struktur Organisasi...</p>;
     if (isError) return <p className="text-center text-danger">Gagal memuat Struktur Organisasi.</p>;
-console.log(galleryItems);
-console.log(process.env.NEXT_PUBLIC_API_URL);
-
+ 
   return (
     <>
       <div className="container my-5">

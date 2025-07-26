@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import useSWR from 'swr';
 
 const footerSections = [
   {
@@ -27,6 +28,24 @@ const footerSections = [
 ];
 
 export default function Footer() {
+  const { data , isLoading } = useSWR('/api/utilities', null)  ;
+ 
+  if (!data || isLoading  ) return <p>Memuat data...</p>; 
+  const selectedIds = ['telephone-icon','email-icon','location-icon']
+
+  const hasil = data.filter((ut :{slug:string}) => selectedIds.includes(ut.slug))
+  
+  const location = hasil.find((item: {slug:string}) => item.slug==='location-icon')
+  const telephone = hasil.find((item: {slug:string}) => item.slug==='telephone-icon')
+  const email = hasil.find((item: {slug:string}) => item.slug==='email-icon')
+
+  // const res = data?.filter((item: {slug:string}) => item.slug ==='video-url' ||item.slug ==='video-content');
+  // console.log(location);
+  if (isLoading) return <p>Memuat data...</p>;
+  if (!data) return <p>Data tidak ditemukan.</p>; 
+
+    // console.log(util);
+    
   return (
     <footer className="section-footer uni-footer footer-layout-1 pt-80px">
       <div className="container">
@@ -45,27 +64,27 @@ export default function Footer() {
             </Link>
             <div className="footer-layout-1__info d-flex align-items-center gap-5px mb-10px">
               <i className="iconify fs-20" data-icon="iconoir:phone" />
-              <span>+62 087721122</span>
+              <span>{telephone.deskripsi}</span>
             </div>
             <div className="footer-layout-1__info d-flex align-items-center gap-5px mb-10px">
-              <i className="iconify fs-20" data-icon="akar-icons:location" />
-              <span>JL. Pattimura No.12</span>
+              <i className="iconify fs-30" data-icon="akar-icons:location" />
+              <span>{location.deskripsi}</span>
             </div>
             <div className="footer-layout-1__info d-flex align-items-center gap-5px mb-20px">
               <i className="iconify fs-20" data-icon="tabler:mail-check" />
               <span>
-                <Link href="mailto:info@universitascontoh.ac.id">
-                  info@universitascontoh.ac.id
+                <Link href={`mailto:info@${email.deskripsi}`}>
+                  {email.deskripsi}
                 </Link>
               </span>
             </div>
-            <ul className="d-flex align-items-center gap-15px">
-              {["facebook", "twitter-x-fill", "pinterest-logo", "instagram-logo"].map((icon, i) => (
+            {/* <ul className="d-flex align-items-center gap-15px">
+              {["instagram-logo"].map((icon, i) => (
                 <li key={i}>
                   <Link href="#"><i className="iconify fs-24" data-icon={`ph:${icon}`} /></Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
 
           {/* Kolom Dinamis dari Map */}

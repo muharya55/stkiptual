@@ -12,7 +12,7 @@ GET http://localhost:3000/api/biro/biro-akademik
 ###
 GET http://localhost:3000/api/prodi
 ###
-GET http://localhost:3000/api/fakultas
+GET http://localhost:3000/api/
 
 ###
 GET http://localhost:3000/api/download
@@ -25,3 +25,6 @@ GET http://localhost:3000/api/struktur-organisasi
 
 ###
 GET https://stkip.ac.id/api/struktur-organisasi
+ 
+###
+GET http://localhost:3000/api/utilities

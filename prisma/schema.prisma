@@ -93,6 +93,7 @@ model fakultas {
 
   jurusan     jurusan[]  @relation("FakultasJurusan") // relasi ke jurusan (hasMany)
 }
+ 
 
 model galeri {
   id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
@@ -128,7 +129,6 @@ model jurusan {
 
   fakultas     fakultas?  @relation("FakultasJurusan", fields: [fakultas_id], references: [id])
 }
-
 
 model kalender_akademik {
   id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
@@ -245,7 +245,6 @@ model contact {
   deleted_at DateTime? @db.Timestamp(0)
 }
 
-
 model utilities {
   id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
   slug       String?   @db.VarChar(255)
@@ -256,4 +255,13 @@ model utilities {
   created_at DateTime? @db.Timestamp(0)
   updated_at DateTime? @db.Timestamp(0)
   deleted_at DateTime? @db.Timestamp(0)
+  url        String?   @db.VarChar(255)
+  image      String?   @db.VarChar(255)
+  deskripsi  String?   @db.VarChar(255)
+}
+
+model contacts {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
 }

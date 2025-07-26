@@ -3,6 +3,7 @@ import AlumniSection from "./section/alumni";
 import BeritaSection from "./section/berita";
 import GallerySection from "./section/gallery";
 import VideoSection from "./section/video";
+import Banner from "./components/Banner";
 
  
 export default function Home() {
@@ -21,7 +22,8 @@ export default function Home() {
           data-loop="true"
         >
           <div className="swiper-wrapper">
-            <div
+            <Banner/>
+            {/* <div
               className="swiper-slide uni-banner__slide vh-100 d-flex align-items-center position-relative"
               style={{
                 backgroundImage: 'url("../images/university/banner-slide-01.jpg")'
@@ -74,7 +76,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* <div className="swiper-button-next swiper-nextBtn-style-02 edm-swiper-button-next-sluni transition-all" />

@@ -64,17 +64,17 @@ export default function Footer() {
             </Link>
             <div className="footer-layout-1__info d-flex align-items-center gap-5px mb-10px">
               <i className="iconify fs-20" data-icon="iconoir:phone" />
-              <span>{telephone.deskripsi}</span>
+              <span>{telephone.deskripsi || ''}</span>
             </div>
             <div className="footer-layout-1__info d-flex align-items-center gap-5px mb-10px">
               <i className="iconify fs-30" data-icon="akar-icons:location" />
-              <span>{location.deskripsi}</span>
+              <span>{location.deskripsi || ''}</span>
             </div>
             <div className="footer-layout-1__info d-flex align-items-center gap-5px mb-20px">
               <i className="iconify fs-20" data-icon="tabler:mail-check" />
               <span>
-                <Link href={`mailto:info@${email.deskripsi}`}>
-                  {email.deskripsi}
+                <Link href={`mailto:info@${email.deskripsi || ''}`}>
+                  {email.deskripsi || ''}
                 </Link>
               </span>
             </div>

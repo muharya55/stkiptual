@@ -32,3 +32,14 @@ GET http://localhost:3000/api/utilities
 
 ###
 GET https://admin.stkip.ac.id/api/artikel/menyelenggarakan-ami-stkip-tual-perkuat-kelembagaan
+
+
+###
+GET https://stkip.ac.id/api/artikel?kategori=Pengumuman&search=&page=1&limit=6
+
+
+###
+GET https://stkip.ac.id/api/utilities
+
+###
+GET https://stkip.ac.id/api/alumni

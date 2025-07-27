@@ -1,4 +1,3 @@
-import Link from "next/link";
 import AlumniSection from "./section/alumni";
 import BeritaSection from "./section/berita";
 import GallerySection from "./section/gallery";

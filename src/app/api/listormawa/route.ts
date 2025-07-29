@@ -13,24 +13,14 @@ function serialize<T>(obj: T): T {
 
 export async function GET() {
   try {
-    const fakultas = await prisma.fakultas.findMany({
+    const ormawa = await prisma.ormawa.findMany({
        select: {
-        nama: true, 
-        singkatan: true, 
-        program: true, 
-        jurusan: {
-          select: {
-            nama: true,
-            slug: true,
-            // image: true,
-            // content: true
-          }
-        }
+        nama_ormawa: true,
       },
       orderBy: { id: 'asc' },
     });
 
-    return NextResponse.json(serialize(fakultas));
+    return NextResponse.json(serialize(ormawa));
   } catch (error) { 
     console.error("Artikel error:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });

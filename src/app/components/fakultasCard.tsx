@@ -1,16 +1,20 @@
+import Link from "next/link";
+
  
-type Jurusan = { nama: string };
+type Jurusan = { nama: string,slug: string };
 
 type FakultasCardProps = {
   singkatan: string;
   nama: string;
   program: string;
+  // slug: string;
   jurusan: Jurusan[];
 };
 
 const FakultasCard = ({ singkatan, nama, program, jurusan }: FakultasCardProps) => {
   // console.log(jurusan);
-  
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
   return (
     <div className="col-md-6 mb-4">
       {/* Header Singkatan + Nama */}
@@ -39,9 +43,13 @@ const FakultasCard = ({ singkatan, nama, program, jurusan }: FakultasCardProps) 
       <ul className="text-secondary mt-2">
         {jurusan.length > 0 ? (
           jurusan.map((item, idx) => (
-            <li className="with-list" key={idx}>
-              {item.nama}
-            </li>
+            <div key={idx}> 
+              <Link href={baseUrl+'/prodi-detail?slug='+item.slug} key={idx} target="_blank">
+                <li className="with-list" key={idx}>
+                  {item.nama}
+                </li>
+              </Link>
+            </div>
           ))
         ) : (
           <li className="with-list">Belum ada jurusan</li>

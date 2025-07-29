@@ -4,13 +4,14 @@ import { useFakultas } from 'lib/useFakultas';
 import React, { Key } from 'react'
 type Jurusan = {
   nama: string;
+  slug: string;
 };
 
 const ProdiSection = () => {
     const{data : fakultasData , isLoading, isError} = useFakultas();
 
     if (isLoading) return <p className="text-center">Loading Prodi ...</p>;
-    if (isError) return <p className="text-center text-danger">Gagal memuat Prodi .</p>;
+    if (isError) return <p className="text-center text-danger">Gagal memuat Prodi...</p>;
     // console.log(fakultasData);
     
   return (

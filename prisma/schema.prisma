@@ -69,16 +69,6 @@ model download {
   deleted_at     DateTime? @db.Timestamp(0)
 }
 
-model failed_jobs {
-  id         BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
-  uuid       String   @unique(map: "failed_jobs_uuid_unique") @db.VarChar(255)
-  connection String   @db.Text
-  queue      String   @db.Text
-  payload    String   @db.LongText
-  exception  String   @db.LongText
-  failed_at  DateTime @default(now()) @db.Timestamp(0)
-}
-
 model fakultas {
   id          BigInt     @id @default(autoincrement()) @db.UnsignedBigInt
   singkatan   String?    @db.VarChar(255)
@@ -94,36 +84,74 @@ model fakultas {
   jurusan     jurusan[]  @relation("FakultasJurusan") // relasi ke jurusan (hasMany)
 }
  
+  
+// model jurusan {
+//   id           BigInt     @id @default(autoincrement()) @db.UnsignedBigInt
+//   nama         String?    @db.VarChar(255)
+//   slug         String?    @db.VarChar(255)
+//   ukt1         Decimal    @db.Decimal(15, 2)
+//   ukt2         Decimal    @db.Decimal(15, 2)
+//   ukt3         Decimal    @db.Decimal(15, 2)
+//   ukt4         Decimal    @db.Decimal(15, 2)
+//   ukt5         Decimal    @db.Decimal(15, 2)
+//   ukt6         Decimal    @db.Decimal(15, 2)
+//   ukt7         Decimal    @db.Decimal(15, 2)
+//   ukt8         Decimal    @db.Decimal(15, 2)
+//   created_by   BigInt?    @db.UnsignedBigInt
+//   updated_by   BigInt?    @db.UnsignedBigInt
+//   deleted_by   BigInt?    @db.UnsignedBigInt
+//   created_at   DateTime?  @db.Timestamp(0)
+//   updated_at   DateTime?  @db.Timestamp(0)
+//   deleted_at   DateTime?  @db.Timestamp(0)
 
-model galeri {
-  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  gambar     String?   @db.VarChar(255)
-  deskripsi  String?   @db.VarChar(255)
-  created_by BigInt?   @db.UnsignedBigInt
-  updated_by BigInt?   @db.UnsignedBigInt
-  deleted_by BigInt?   @db.UnsignedBigInt
-  created_at DateTime? @db.Timestamp(0)
-  updated_at DateTime? @db.Timestamp(0)
-  deleted_at DateTime? @db.Timestamp(0)
+//   fakultas_id  BigInt?    @db.UnsignedBigInt
+
+//   fakultas     fakultas?  @relation("FakultasJurusan", fields: [fakultas_id], references: [id])
+// }
+model failed_jobs {
+  id         BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  uuid       String   @unique(map: "failed_jobs_uuid_unique") @db.VarChar(255)
+  connection String   @db.Text
+  queue      String   @db.Text
+  payload    String   @db.LongText
+  exception  String   @db.LongText
+  failed_at  DateTime @default(now()) @db.Timestamp(0)
 }
 
+// model fakultas {
+//   id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+//   singkatan  String?   @db.VarChar(255)
+//   nama       String?   @db.VarChar(255)
+//   program    String?   @db.VarChar(255)
+//   created_by BigInt?   @db.UnsignedBigInt
+//   updated_by BigInt?   @db.UnsignedBigInt
+//   deleted_by BigInt?   @db.UnsignedBigInt
+//   created_at DateTime? @db.Timestamp(0)
+//   updated_at DateTime? @db.Timestamp(0)
+//   deleted_at DateTime? @db.Timestamp(0)
+// }
+
 model jurusan {
-  id           BigInt     @id @default(autoincrement()) @db.UnsignedBigInt
-  nama         String?    @db.VarChar(255)
-  ukt1         Decimal    @db.Decimal(15, 2)
-  ukt2         Decimal    @db.Decimal(15, 2)
-  ukt3         Decimal    @db.Decimal(15, 2)
-  ukt4         Decimal    @db.Decimal(15, 2)
-  ukt5         Decimal    @db.Decimal(15, 2)
-  ukt6         Decimal    @db.Decimal(15, 2)
-  ukt7         Decimal    @db.Decimal(15, 2)
-  ukt8         Decimal    @db.Decimal(15, 2)
-  created_by   BigInt?    @db.UnsignedBigInt
-  updated_by   BigInt?    @db.UnsignedBigInt
-  deleted_by   BigInt?    @db.UnsignedBigInt
-  created_at   DateTime?  @db.Timestamp(0)
-  updated_at   DateTime?  @db.Timestamp(0)
-  deleted_at   DateTime?  @db.Timestamp(0)
+  id          BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  nama        String?   @db.VarChar(255)
+  ukt1        Decimal   @db.Decimal(15, 2)
+  ukt2        Decimal   @db.Decimal(15, 2)
+  ukt3        Decimal   @db.Decimal(15, 2)
+  ukt4        Decimal   @db.Decimal(15, 2)
+  ukt5        Decimal   @db.Decimal(15, 2)
+  ukt6        Decimal   @db.Decimal(15, 2)
+  ukt7        Decimal   @db.Decimal(15, 2)
+  ukt8        Decimal   @db.Decimal(15, 2)
+  created_by  BigInt?   @db.UnsignedBigInt
+  updated_by  BigInt?   @db.UnsignedBigInt
+  deleted_by  BigInt?   @db.UnsignedBigInt
+  created_at  DateTime? @db.Timestamp(0)
+  updated_at  DateTime? @db.Timestamp(0)
+  deleted_at  DateTime? @db.Timestamp(0)
+  judul       String?   @db.VarChar(255)
+  slug        String?   @db.VarChar(255)
+  image       String?   @db.VarChar(255)
+  content     String?   @db.LongText
 
   fakultas_id  BigInt?    @db.UnsignedBigInt
 
@@ -216,6 +244,7 @@ model users {
   remember_token    String?   @db.VarChar(100)
   created_at        DateTime? @db.Timestamp(0)
   updated_at        DateTime? @db.Timestamp(0)
+  deleted_at        DateTime? @db.Timestamp(0)
 }
 
 model buku_panduan {
@@ -264,4 +293,16 @@ model contacts {
   id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
   created_at DateTime? @db.Timestamp(0)
   updated_at DateTime? @db.Timestamp(0)
+}
+
+model galeri {
+  id         BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  gambar     String?   @db.VarChar(255)
+  deskripsi  String?   @db.VarChar(255)
+  created_by BigInt?   @db.UnsignedBigInt
+  updated_by BigInt?   @db.UnsignedBigInt
+  deleted_by BigInt?   @db.UnsignedBigInt
+  created_at DateTime? @db.Timestamp(0)
+  updated_at DateTime? @db.Timestamp(0)
+  deleted_at DateTime? @db.Timestamp(0)
 }

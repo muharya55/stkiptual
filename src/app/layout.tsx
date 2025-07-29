@@ -27,6 +27,8 @@ export default function RootLayout({
       />
       {/* Favicon icon */}
       <link rel="shortcut icon" href="/images/logo/bg-univ-2.PNG" />
+      <link rel="icon" type="image/png" href="/images/logo/bg-univ-2.PNG" sizes="32x32" />
+
       <link
         rel="apple-touch-icon"
         sizes="32x32"

@@ -29,6 +29,11 @@ GET https://stkip.ac.id/api/struktur-organisasi
 ###
 GET http://localhost:3000/api/utilities
 
+###
+GET http://localhost:3000/api/listukm
+###
+GET http://localhost:3000/api/prodi-detail/prodi-s1-akuntansis
+
 
 ###
 GET https://admin.stkip.ac.id/api/artikel/menyelenggarakan-ami-stkip-tual-perkuat-kelembagaan

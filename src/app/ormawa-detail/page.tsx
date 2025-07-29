@@ -2,17 +2,17 @@
 // app/data/sidebarMenu.ts
 
 import OrmawaDetailSec from "app/section/OrmawaDetailSec";
-import Image from "next/image";
+// import Image from "next/image";
 
  
-const organisasiList: string[] = [
-  'DPM F. Agama Islam',
-  'BEM F. Agama Islam',
-  'HM Bahasa dan Sastra Arab',
-  'HM Ilmu Hadis',
-  'HM Pend. Agama Islam',
-  'HM Perbankan Syariah',
-];
+// const organisasiList: string[] = [
+//   'DPM F. Agama Islam',
+//   'BEM F. Agama Islam',
+//   'HM Bahasa dan Sastra Arab',
+//   'HM Ilmu Hadis',
+//   'HM Pend. Agama Islam',
+//   'HM Perbankan Syariah',
+// ];
 
 const OrmawaDetail: React.FC = () => {
 

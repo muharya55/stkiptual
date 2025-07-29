@@ -1,5 +1,7 @@
 // import Link from "next/link";
 
+import Image from "next/image";
+
 export default function NotFound() {
   return (
     <section className="page-404 mt-80px mb-80px">
@@ -7,7 +9,7 @@ export default function NotFound() {
         <div className="row align-items-center p-80px page-404__wrapper">
           <div className="col-md-6">
             <div className="page-404__image">
-              <img src="/images/404-page.png" alt="" className="mb-5 mb-md-0" />
+              <Image src="/images/404-page.png" alt="" className="mb-5 mb-md-0" />
             </div>
           </div>
           <div className="col-md-6">

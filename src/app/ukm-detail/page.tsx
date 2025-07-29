@@ -2,17 +2,17 @@
 // app/data/sidebarMenu.ts
 
 import UkmDetailSec from "app/section/UkmDetailSec";
-import Image from "next/image";
+// import Image from "next/image";
  
 export type MenuItem = {
   label: string;
   href: string;
 };
- const ukmList = [
-  ['BADMINTON', 'KARATE', 'MADAPALA', 'MUSIK', 'PSM', 'SEPAKBOLA'],
-  ['BOLA BASKET', 'KOPMA', 'DECO', 'PMI', 'POROS', 'TAE KWON DO'],
-  ['BOLA VOLI', 'LENSA', 'MENWA', 'PRAMUKA', 'SENI TARI'],
-];
+//  const ukmList = [
+//   ['BADMINTON', 'KARATE', 'MADAPALA', 'MUSIK', 'PSM', 'SEPAKBOLA'],
+//   ['BOLA BASKET', 'KOPMA', 'DECO', 'PMI', 'POROS', 'TAE KWON DO'],
+//   ['BOLA VOLI', 'LENSA', 'MENWA', 'PRAMUKA', 'SENI TARI'],
+// ];
 const UkmDetail: React.FC = () => {
 
   return (

@@ -9,7 +9,7 @@ export default function NotFound() {
         <div className="row align-items-center p-80px page-404__wrapper">
           <div className="col-md-6">
             <div className="page-404__image">
-              <Image src="/images/404-page.png" alt="" className="mb-5 mb-md-0" />
+              <Image src="/images/404-page.png" width={300} height={200} alt="" className="mb-5 mb-md-0" />
             </div>
           </div>
           <div className="col-md-6">

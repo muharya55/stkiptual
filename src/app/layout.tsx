@@ -1,12 +1,23 @@
-
-import React from "react";
 import Script from "next/script";
 import Link from "next/link";   
 import HomeClientInit from "./utils/HomeClientInit";
 import Footer from "./section/footer";
 import Navbar from "./components/Navbar";
 import SearchBerita from "./section/SearchBerita";
- 
+import '../styles/css/bootstrap.min.css'
+import '../styles/css/swiper-bundle.min.css'
+import '../styles/css/lightbox.css'
+import '../styles/css/nouislider.min.css'
+import '../styles/css/style2cc5.css'
+import '../styles/css/demos/university2cc5.css'
+
+// import '../scripts/iconify.min.js'
+// import '../scripts/swiper-bundle.min.js'
+// import '../scripts/swiper-control.js'
+// import '../scripts/main.js'
+// import '../scripts/wow.min.js'
+// import '../scripts/main2cc5.js'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,14 +51,14 @@ export default function RootLayout({
         href="/images/apple-touch-icon-192x192.png"
       /> */}
       {/* Style */}
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+      {/* <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
       <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
       <link rel="stylesheet" href="assets/css/lightbox.css" />
       <link rel="stylesheet" href="assets/css/nouislider.min.css" />
       <link rel="stylesheet" href="assets/css/style2cc5.css?v=5.6" />
       <link rel="stylesheet" href="assets/css/demos/university2cc5.css?v=5.6" />
+      <link rel="stylesheet" href="assets/css/animate.css" /> */}
       {/* Wow */}
-      <link rel="stylesheet" href="assets/css/animate.css" />
       </head>
      
       <body className='uni-layout'>
@@ -206,11 +217,11 @@ export default function RootLayout({
  
 
         
-      {/* <Script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></Script> */}
+      <Script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></Script>
       <Script strategy="afterInteractive" src="assets/js/iconify.min.js"></Script>
       <Script strategy="afterInteractive" src="assets/js/swiper-bundle.min.js"></Script>
       <Script strategy="afterInteractive" src="assets/js/swiper-control2cc5.js?v=5.6"></Script>
-      <Script strategy="beforeInteractive" src="assets/js/main2cc5.js?v=5.6"></Script>
+      <Script strategy="beforeInteractive" src="assets/js/main2cc5.js"></Script>
       <Script strategy="afterInteractive" src="assets/js/wow.min.js"></Script> 
       <Script strategy="afterInteractive" src="assets/js/main.js"></Script>
      

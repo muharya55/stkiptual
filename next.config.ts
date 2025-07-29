@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [new URL('https://admin.stkip.ac.id/**')],
   },
+  // images: {
+  //   remotePatterns: [new URL('http://localhost:8000/**')],
+  // },
 };
 
 export default nextConfig;

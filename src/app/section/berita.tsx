@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Aside from 'app/components/aside';
 import { useState } from 'react';
 import { useArtikelByKategori } from 'lib/useArtikel';
+import Link from 'next/link';
  interface Berita {
   slug: string;
   image: string;
@@ -28,7 +29,7 @@ const BeritaSection: React.FC = () => {
                 {data.map((item: Berita) => (
                   <div key={item.slug} className="col-12 col-sm-6 col-md-6 col-lg-4 mt-3">
                     <div className="campus-items">
-                      <a href={`/berita-detail?slug=${item.slug}`}>
+                      <Link href={`/berita-detail/${item.slug}`} target="_blank" rel="noopener noreferrer">
                         <Image
                           src={`${apiUrl}/storage/${item.image}` || '/images/berita-1.jpeg'}
                           // src={`${item.thumbnail}`}
@@ -38,17 +39,17 @@ const BeritaSection: React.FC = () => {
                           unoptimized
                           style={{ width: '100%', height: 'auto' }}
                         />
-                      </a>
+                      </Link>
                       <div className="campus-items-box pt-20px">
                         <h6 className="fw-bolder mb-5px">
-                          <a href={`/berita-detail?slug=${item.slug}`} className="transition-all">
+                          <Link href={`/berita-detail/${item.slug}`} target="_blank" rel="noopener noreferrer" className="transition-all">
                             {item.judul}
-                          </a>
+                          </Link>
                         </h6>
                         <p className="mb-10px">{item.kategori}</p>
-                        <a href={`/berita-detail?slug=${item.slug}`} className="fs-14 fw-medium transition-all text-uppercase text-biru">
+                        <Link href={`/berita-detail/${item.slug}`} target="_blank" rel="noopener noreferrer" className="fs-14 fw-medium transition-all text-uppercase text-biru">
                           Baca Selengkapnya
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

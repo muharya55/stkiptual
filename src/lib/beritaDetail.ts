@@ -4,8 +4,8 @@ export async function getBeritaDetail(slug: string) {
   // console.log(`${apiUrl}/api/artikel/${slug}`);
   try {
       const res = await fetch(`${apiUrl}/api/artikel/${slug}`, {
-          cache: 'no-store', // paksa ambil data baru setiap kali
-          // next: { revalidate: 3600 }, // cache selama 1 jam
+          // cache: 'no-store', // paksa ambil data baru setiap kali
+          next: { revalidate: 3600 }, // cache selama 1 jam
         });
         
         
@@ -14,7 +14,7 @@ export async function getBeritaDetail(slug: string) {
     }
 
     const json = await res.json();
-    // console.log(json);
+    console.log(json);
     return json;  
   } catch (error) {
     console.error('Error fetch detail artikel:', error);

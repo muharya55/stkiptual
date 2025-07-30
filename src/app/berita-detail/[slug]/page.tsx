@@ -19,8 +19,9 @@ export async function generateMetadata(
     if (!artikel) return {};
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
   const fullImageUrl = `${apiUrl}/storage/${artikel.image}`;
-  const artikelUrl = `${apiUrl}/berita-detail/${slug}`;
+  const artikelUrl = `${baseurl}/berita-detail/${slug}`;
 
   return {
     title: artikel.judul,

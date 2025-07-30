@@ -29,14 +29,14 @@ const BerDetail = ({ artikel }: BerDetailProps) => {
         loading="eager"
       />
       <h1 className="fs-30 fw-bolder mb-10px">{artikel.judul}</h1>
-      <div className="text-muted fs-14 mb-20px">
-        {artikel.kategori}{' '}
+      {/* <div className="text-muted fs-14 mb-20px">
+        {artikel.kategori}
         {new Date(artikel.created_at).toLocaleDateString('id-ID', {
           day: 'numeric',
           month: 'long',
           year: 'numeric',
         })}
-      </div>
+      </div> */}
       <div
         className="blog-single-simple__brief"
         dangerouslySetInnerHTML={{ __html: artikel.content }}

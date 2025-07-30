@@ -10,13 +10,7 @@ import '../styles/css/lightbox.css'
 import '../styles/css/nouislider.min.css'
 import '../styles/css/style2cc5.css'
 import '../styles/css/demos/university2cc5.css'
-
-// import '../scripts/iconify.min.js'
-// import '../scripts/swiper-bundle.min.js'
-// import '../scripts/swiper-control.js'
-// import '../scripts/main.js'
-// import '../scripts/wow.min.js'
-// import '../scripts/main2cc5.js'
+ 
 
 export default function RootLayout({
   children,

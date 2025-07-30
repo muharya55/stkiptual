@@ -3,7 +3,8 @@ export async function getBeritaDetail(slug: string) {
   
   try {
       const res = await fetch(`${apiUrl}/api/artikel/${slug}`, {
-          cache: 'no-store', // paksa ambil data baru setiap kali
+          // cache: 'no-store', // paksa ambil data baru setiap kali
+          next: { revalidate: 3600 }, // cache selama 1 jam
         });
         
         console.log(res);

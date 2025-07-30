@@ -9,9 +9,8 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const {slug} = await params;
-  const artikel = await getBeritaDetail(slug);
-    console.log(artikel);
+   const artikel = await getBeritaDetail(params.slug);
+    // console.log(artikel);
       if (!artikel) return {};
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;

@@ -25,13 +25,13 @@ export async function generateMetadata(
 
   return {
     title: artikel.judul,
-    description: artikel.kategori,
+    description: artikel.judul,
     openGraph: {
       title: artikel.judul,
-      description: artikel.kategori,
+      description: artikel.judul,
       url: artikelUrl,
       type: 'article',
-      siteName: 'STKIP EVAV TUAL',
+      siteName: 'stkip.ac.id',
       images: [
         {
           url: fullImageUrl,
@@ -44,7 +44,7 @@ export async function generateMetadata(
     twitter: {
       card: 'summary_large_image',
       title: artikel.judul,
-      description: artikel.kategori,
+      description: artikel.judul,
       images: [fullImageUrl],
     },
   };

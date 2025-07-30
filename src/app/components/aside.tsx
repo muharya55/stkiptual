@@ -21,7 +21,7 @@ const Aside: React.FC = () => {
     posts.map((post) => (
       <div key={post.slug} className="latest-posts d-flex gap-20px mb-20px">
         <div className="latest-posts_thumb" >
-          <Link href={`/berita-detail?slug=${post.slug}`}>
+          <Link href={`/berita-detail/${post.slug}`}>
             <Image
               src={apiUrl+"/storage/"+post.image || '/images/berita/berita-1.jpeg'}
               alt={post.judul}
@@ -34,7 +34,7 @@ const Aside: React.FC = () => {
         </div>
         <div className="latest-posts_content">
           <h6 className="fs-15 fw-semibold line-clamp-2 mb-10px">
-            <Link href={`/berita-detail?slug=${post.slug}`} className="transition-all fw-semibold">
+            <Link href={`/berita-detail/${post.slug}`} className="transition-all fw-semibold">
               {post.judul}
             </Link>
           </h6>

@@ -7,16 +7,20 @@ export const dynamic = 'force-dynamic';
 // interface Props {
 //   params: { slug: string };
 // }
+interface Props {
+  params: Promise<{ slug: string }>;
+}
 export async function generateMetadata(
-  { params }: { params: { slug: string } }
+  { params }: Props
 ): Promise<Metadata> {
-   const artikel = await getBeritaDetail(params.slug);
+   const {slug} = await params ;
+   const artikel = await getBeritaDetail(slug);
     // console.log(artikel);
       if (!artikel) return {};
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const fullImageUrl = `${apiUrl}/storage/${artikel.image}`;
-  const artikelUrl = `${apiUrl}/berita/${params.slug}`;
+  const artikelUrl = `${apiUrl}/berita/${slug}`;
 
   return {
     title: artikel.judul,
@@ -34,13 +38,14 @@ export async function generateMetadata(
   };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: Props) {
+  const {slug} = await params
   return (
     <section className="blog-single-simple pt-20px pb-80px">
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-12 mb-30px mb-lg-0">
-            <BerDetail slug={params.slug} />
+            <BerDetail slug={slug} />
           </div>
         </div>
       </div>

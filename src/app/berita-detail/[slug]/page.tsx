@@ -53,6 +53,8 @@ export default async function Page({ params }: Props) {
   const {slug} = await params;
   const artikel = await getBeritaDetail(slug);
   if (!artikel) return {};
+  // console.log(artikel);
+  
   // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   return (

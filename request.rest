@@ -33,6 +33,8 @@ GET http://localhost:3000/api/alumni
 GET http://localhost:3000/api/listukm
 ###
 GET http://localhost:3000/api/prodi-detail/prodi-s1-akuntansis
+###
+GET http://localhost:3000/api/artikel/jangan-cuma-nongkrong-yuk-ikut-seminar-ini-alasannya-biar-kuliahmu-gak-cuma-jadi-drama-episode-panjang
 
 
 ###

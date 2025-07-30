@@ -4,11 +4,12 @@ import { getBeritaDetail } from 'lib/beritaDetail';
 
 export const dynamic = 'force-dynamic';
 
-interface Props {
-  params: { slug: string };
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+// interface Props {
+//   params: { slug: string };
+// }
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
    const artikel = await getBeritaDetail(params.slug);
     // console.log(artikel);
       if (!artikel) return {};
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <section className="blog-single-simple pt-20px pb-80px">
       <div className="container">

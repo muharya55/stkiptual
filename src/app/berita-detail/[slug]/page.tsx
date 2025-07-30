@@ -74,7 +74,7 @@ export default async function Page({ params }: Props) {
                   />
                   <h1 className="fs-30 fw-bolder mb-10px">{artikel.judul}</h1>
                   <div className="text-muted fs-14 mb-20px">
-                    {artikel.kategori}{' '}
+                    {artikel.kategori}
                     {new Date(artikel.created_at).toLocaleDateString('id-ID', {
                       day: 'numeric',
                       month: 'long',

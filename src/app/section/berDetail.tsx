@@ -1,16 +1,20 @@
-'use client';
-
-import { useBeritaDetail } from 'lib/useBeritaDetail';
 import Image from 'next/image';
 
-const BerDetail = ({ slug }: { slug: string }) => {
-  const { data: artikel, isLoading, isError } = useBeritaDetail(slug);
+type Artikel = {
+  id: number;
+  judul: string;
+  content: string;
+  image: string;
+  kategori: string;
+  created_at: string;
+};
 
+interface BerDetailProps {
+  artikel: Artikel;
+}
+
+const BerDetail = ({ artikel }: BerDetailProps) => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
-  if (isLoading) return <p>Memuat data...</p>;
-  if (isError) return <p>Gagal memuat data struktur.</p>;
-  if (!artikel) return <p>Data tidak ditemukan.</p>;
 
   return (
     <div className="blog-single-simple__wrapper">

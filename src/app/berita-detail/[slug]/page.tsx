@@ -15,12 +15,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
    const {slug} = await params ;
    const artikel = await getBeritaDetail(slug);
-    // console.log(artikel);
-      if (!artikel) return {};
+    if (!artikel) return {};
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const fullImageUrl = `${apiUrl}/storage/${artikel.image}`;
-  const artikelUrl = `${apiUrl}/berita/${slug}`;
+  const artikelUrl = `${apiUrl}/berita-detail/${slug}`;
 
   return {
     title: artikel.judul,
@@ -28,12 +27,23 @@ export async function generateMetadata(
     openGraph: {
       title: artikel.judul,
       description: artikel.kategori,
-      images: [fullImageUrl],
       url: artikelUrl,
       type: 'article',
+      siteName: 'STKIP EVAV TUAL',
+      images: [
+        {
+          url: fullImageUrl,
+          width: 1200,
+          height: 630,
+          alt: artikel.judul,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
+      title: artikel.judul,
+      description: artikel.kategori,
+      images: [fullImageUrl],
     },
   };
 }

@@ -31,14 +31,27 @@ export default function RootLayout({
         content="STKIP EVAV PERSADA TUAL"
       />
       {/* Favicon icon */}
-      <link rel="shortcut icon" href="/images/logo/bg-univ-2.PNG" />
+      {/* <link rel="shortcut icon" href="/images/logo/bg-univ-2.PNG" />
       <link rel="icon" type="image/png" href="/images/logo/bg-univ-2.PNG" sizes="32x32" />
 
       <link
         rel="apple-touch-icon"
         sizes="32x32"
         href="/images/logo/bg-univ-2.PNG"
-      />
+      /> */}
+      {/* <link rel="shortcut icon" href="/images/apple-touch-icon-192x192.png" />
+      <link rel="icon" type="image/png" href="/images/apple-touch-icon-192x192.png" sizes="32x32" />
+
+      <link
+        rel="apple-touch-icon"
+        sizes="32x32"
+        href="/images/apple-touch-icon-192x192.png"
+      /> */}
+       
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="192x192" href="/images/apple-touch-icon-192x192.png" />
+      <link rel="apple-touch-icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png" />
+
       {/* <link
         rel="apple-touch-icon"
         sizes="192x192"
